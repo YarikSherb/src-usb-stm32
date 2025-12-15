@@ -1,0 +1,3179 @@
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"usb_regs.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SetCNTR,"ax",%progbits
+  18              		.align	1
+  19              		.global	SetCNTR
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	SetCNTR:
+  25              	.LVL0:
+  26              	.LFB29:
+  27              		.file 1 "./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c"
+   1:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
+   2:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * File Name          : usb_regs.c
+   3:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Author             : MCD Application Team
+   4:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Version            : V3.3.0
+   5:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Date               : 21-March-2011
+   6:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description        : Interface functions to USB cell registers
+   7:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** ********************************************************************************
+   8:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+   9:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+  10:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+  11:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+  12:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+  13:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  14:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+  15:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** #ifndef STM32F10X_CL
+  16:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+  17:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /* Includes ------------------------------------------------------------------*/
+  18:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** #include "usb_lib.h"
+  19:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+  20:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /* Private typedef -----------------------------------------------------------*/
+  21:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /* Private define ------------------------------------------------------------*/
+  22:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /* Private macro -------------------------------------------------------------*/
+  23:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /* Private variables ---------------------------------------------------------*/
+  24:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /* Extern variables ----------------------------------------------------------*/
+  25:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /* Private function prototypes -----------------------------------------------*/
+  26:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /* Private functions ---------------------------------------------------------*/
+  27:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+  28:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+  29:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetCNTR.
+  30:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the CNTR register value.
+  31:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : wRegValue: new register value.
+  32:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+  33:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+  34:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+  35:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetCNTR(uint16_t wRegValue)
+  36:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+  28              		.loc 1 36 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  37:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetCNTR(wRegValue);
+  33              		.loc 1 37 3 view .LVU1
+  34 0000 014B     		ldr	r3, .L2
+  35 0002 C3F8400C 		str	r0, [r3, #3136]
+  38:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+  36              		.loc 1 38 1 is_stmt 0 view .LVU2
+  37 0006 7047     		bx	lr
+  38              	.L3:
+  39              		.align	2
+  40              	.L2:
+  41 0008 00500040 		.word	1073762304
+  42              		.cfi_endproc
+  43              	.LFE29:
+  45              		.section	.text.GetCNTR,"ax",%progbits
+  46              		.align	1
+  47              		.global	GetCNTR
+  48              		.syntax unified
+  49              		.thumb
+  50              		.thumb_func
+  52              	GetCNTR:
+  53              	.LFB30:
+  39:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+  40:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+  41:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetCNTR.
+  42:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : returns the CNTR register value.
+  43:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : None.
+  44:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+  45:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : CNTR register Value.
+  46:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+  47:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetCNTR(void)
+  48:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+  54              		.loc 1 48 1 is_stmt 1 view -0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+  49:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetCNTR());
+  59              		.loc 1 49 3 view .LVU4
+  60              		.loc 1 49 10 is_stmt 0 view .LVU5
+  61 0000 024B     		ldr	r3, .L5
+  62 0002 D3F8400C 		ldr	r0, [r3, #3136]
+  50:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+  63              		.loc 1 50 1 view .LVU6
+  64 0006 80B2     		uxth	r0, r0
+  65 0008 7047     		bx	lr
+  66              	.L6:
+  67 000a 00BF     		.align	2
+  68              	.L5:
+  69 000c 00500040 		.word	1073762304
+  70              		.cfi_endproc
+  71              	.LFE30:
+  73              		.section	.text.SetISTR,"ax",%progbits
+  74              		.align	1
+  75              		.global	SetISTR
+  76              		.syntax unified
+  77              		.thumb
+  78              		.thumb_func
+  80              	SetISTR:
+  81              	.LVL1:
+  82              	.LFB31:
+  51:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+  52:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+  53:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetISTR.
+  54:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the ISTR register value.
+  55:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : wRegValue: new register value.
+  56:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+  57:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+  58:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+  59:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetISTR(uint16_t wRegValue)
+  60:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+  83              		.loc 1 60 1 is_stmt 1 view -0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87              		@ link register save eliminated.
+  61:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetISTR(wRegValue);
+  88              		.loc 1 61 3 view .LVU8
+  89 0000 014B     		ldr	r3, .L8
+  90 0002 C3F8440C 		str	r0, [r3, #3140]
+  62:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+  91              		.loc 1 62 1 is_stmt 0 view .LVU9
+  92 0006 7047     		bx	lr
+  93              	.L9:
+  94              		.align	2
+  95              	.L8:
+  96 0008 00500040 		.word	1073762304
+  97              		.cfi_endproc
+  98              	.LFE31:
+ 100              		.section	.text.GetISTR,"ax",%progbits
+ 101              		.align	1
+ 102              		.global	GetISTR
+ 103              		.syntax unified
+ 104              		.thumb
+ 105              		.thumb_func
+ 107              	GetISTR:
+ 108              	.LFB32:
+  63:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+  64:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+  65:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetISTR
+  66:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the ISTR register value.
+  67:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : None.
+  68:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+  69:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : ISTR register Value
+  70:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+  71:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetISTR(void)
+  72:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 109              		.loc 1 72 1 is_stmt 1 view -0
+ 110              		.cfi_startproc
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113              		@ link register save eliminated.
+  73:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetISTR());
+ 114              		.loc 1 73 3 view .LVU11
+ 115              		.loc 1 73 10 is_stmt 0 view .LVU12
+ 116 0000 024B     		ldr	r3, .L11
+ 117 0002 D3F8440C 		ldr	r0, [r3, #3140]
+  74:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 118              		.loc 1 74 1 view .LVU13
+ 119 0006 80B2     		uxth	r0, r0
+ 120 0008 7047     		bx	lr
+ 121              	.L12:
+ 122 000a 00BF     		.align	2
+ 123              	.L11:
+ 124 000c 00500040 		.word	1073762304
+ 125              		.cfi_endproc
+ 126              	.LFE32:
+ 128              		.section	.text.GetFNR,"ax",%progbits
+ 129              		.align	1
+ 130              		.global	GetFNR
+ 131              		.syntax unified
+ 132              		.thumb
+ 133              		.thumb_func
+ 135              	GetFNR:
+ 136              	.LFB33:
+  75:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+  76:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+  77:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetFNR
+  78:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the FNR register value.
+  79:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : None.
+  80:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+  81:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : FNR register Value
+  82:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+  83:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetFNR(void)
+  84:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 137              		.loc 1 84 1 is_stmt 1 view -0
+ 138              		.cfi_startproc
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141              		@ link register save eliminated.
+  85:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetFNR());
+ 142              		.loc 1 85 3 view .LVU15
+ 143              		.loc 1 85 10 is_stmt 0 view .LVU16
+ 144 0000 024B     		ldr	r3, .L14
+ 145 0002 D3F8480C 		ldr	r0, [r3, #3144]
+  86:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 146              		.loc 1 86 1 view .LVU17
+ 147 0006 80B2     		uxth	r0, r0
+ 148 0008 7047     		bx	lr
+ 149              	.L15:
+ 150 000a 00BF     		.align	2
+ 151              	.L14:
+ 152 000c 00500040 		.word	1073762304
+ 153              		.cfi_endproc
+ 154              	.LFE33:
+ 156              		.section	.text.SetDADDR,"ax",%progbits
+ 157              		.align	1
+ 158              		.global	SetDADDR
+ 159              		.syntax unified
+ 160              		.thumb
+ 161              		.thumb_func
+ 163              	SetDADDR:
+ 164              	.LVL2:
+ 165              	.LFB34:
+  87:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+  88:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+  89:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetDADDR
+  90:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the DADDR register value.
+  91:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : wRegValue: new register value.
+  92:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+  93:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+  94:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+  95:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetDADDR(uint16_t wRegValue)
+  96:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 166              		.loc 1 96 1 is_stmt 1 view -0
+ 167              		.cfi_startproc
+ 168              		@ args = 0, pretend = 0, frame = 0
+ 169              		@ frame_needed = 0, uses_anonymous_args = 0
+ 170              		@ link register save eliminated.
+  97:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetDADDR(wRegValue);
+ 171              		.loc 1 97 3 view .LVU19
+ 172 0000 014B     		ldr	r3, .L17
+ 173 0002 C3F84C0C 		str	r0, [r3, #3148]
+  98:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 174              		.loc 1 98 1 is_stmt 0 view .LVU20
+ 175 0006 7047     		bx	lr
+ 176              	.L18:
+ 177              		.align	2
+ 178              	.L17:
+ 179 0008 00500040 		.word	1073762304
+ 180              		.cfi_endproc
+ 181              	.LFE34:
+ 183              		.section	.text.GetDADDR,"ax",%progbits
+ 184              		.align	1
+ 185              		.global	GetDADDR
+ 186              		.syntax unified
+ 187              		.thumb
+ 188              		.thumb_func
+ 190              	GetDADDR:
+ 191              	.LFB35:
+  99:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 100:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 101:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetDADDR
+ 102:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the DADDR register value.
+ 103:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : None.
+ 104:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 105:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : DADDR register Value
+ 106:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 107:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetDADDR(void)
+ 108:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 192              		.loc 1 108 1 is_stmt 1 view -0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196              		@ link register save eliminated.
+ 109:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetDADDR());
+ 197              		.loc 1 109 3 view .LVU22
+ 198              		.loc 1 109 10 is_stmt 0 view .LVU23
+ 199 0000 024B     		ldr	r3, .L20
+ 200 0002 D3F84C0C 		ldr	r0, [r3, #3148]
+ 110:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 201              		.loc 1 110 1 view .LVU24
+ 202 0006 80B2     		uxth	r0, r0
+ 203 0008 7047     		bx	lr
+ 204              	.L21:
+ 205 000a 00BF     		.align	2
+ 206              	.L20:
+ 207 000c 00500040 		.word	1073762304
+ 208              		.cfi_endproc
+ 209              	.LFE35:
+ 211              		.section	.text.SetBTABLE,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	SetBTABLE
+ 214              		.syntax unified
+ 215              		.thumb
+ 216              		.thumb_func
+ 218              	SetBTABLE:
+ 219              	.LVL3:
+ 220              	.LFB36:
+ 111:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 112:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 113:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetBTABLE
+ 114:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the BTABLE.
+ 115:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : wRegValue: New register value.
+ 116:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 117:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 118:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 119:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetBTABLE(uint16_t wRegValue)
+ 120:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 221              		.loc 1 120 1 is_stmt 1 view -0
+ 222              		.cfi_startproc
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225              		@ link register save eliminated.
+ 121:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetBTABLE(wRegValue);
+ 226              		.loc 1 121 3 view .LVU26
+ 227 0000 034B     		ldr	r3, .L23
+ 228 0002 20F00700 		bic	r0, r0, #7
+ 229              	.LVL4:
+ 230              		.loc 1 121 3 is_stmt 0 view .LVU27
+ 231 0006 80B2     		uxth	r0, r0
+ 232 0008 C3F8500C 		str	r0, [r3, #3152]
+ 122:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 233              		.loc 1 122 1 view .LVU28
+ 234 000c 7047     		bx	lr
+ 235              	.L24:
+ 236 000e 00BF     		.align	2
+ 237              	.L23:
+ 238 0010 00500040 		.word	1073762304
+ 239              		.cfi_endproc
+ 240              	.LFE36:
+ 242              		.section	.text.GetBTABLE,"ax",%progbits
+ 243              		.align	1
+ 244              		.global	GetBTABLE
+ 245              		.syntax unified
+ 246              		.thumb
+ 247              		.thumb_func
+ 249              	GetBTABLE:
+ 250              	.LFB37:
+ 123:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 124:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 125:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetBTABLE.
+ 126:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the BTABLE register value.
+ 127:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : None. 
+ 128:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 129:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : BTABLE address.
+ 130:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 131:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetBTABLE(void)
+ 132:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 251              		.loc 1 132 1 is_stmt 1 view -0
+ 252              		.cfi_startproc
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 255              		@ link register save eliminated.
+ 133:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetBTABLE());
+ 256              		.loc 1 133 3 view .LVU30
+ 257              		.loc 1 133 10 is_stmt 0 view .LVU31
+ 258 0000 024B     		ldr	r3, .L26
+ 259 0002 D3F8500C 		ldr	r0, [r3, #3152]
+ 134:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 260              		.loc 1 134 1 view .LVU32
+ 261 0006 80B2     		uxth	r0, r0
+ 262 0008 7047     		bx	lr
+ 263              	.L27:
+ 264 000a 00BF     		.align	2
+ 265              	.L26:
+ 266 000c 00500040 		.word	1073762304
+ 267              		.cfi_endproc
+ 268              	.LFE37:
+ 270              		.section	.text.SetENDPOINT,"ax",%progbits
+ 271              		.align	1
+ 272              		.global	SetENDPOINT
+ 273              		.syntax unified
+ 274              		.thumb
+ 275              		.thumb_func
+ 277              	SetENDPOINT:
+ 278              	.LVL5:
+ 279              	.LFB38:
+ 135:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 136:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 137:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetENDPOINT
+ 138:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the Endpoint register value.
+ 139:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 140:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wRegValue.
+ 141:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 142:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 143:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 144:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetENDPOINT(uint8_t bEpNum, uint16_t wRegValue)
+ 145:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 280              		.loc 1 145 1 is_stmt 1 view -0
+ 281              		.cfi_startproc
+ 282              		@ args = 0, pretend = 0, frame = 0
+ 283              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284              		@ link register save eliminated.
+ 146:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetENDPOINT(bEpNum, wRegValue);
+ 285              		.loc 1 146 3 view .LVU34
+ 286 0000 8000     		lsls	r0, r0, #2
+ 287              	.LVL6:
+ 288              		.loc 1 146 3 is_stmt 0 view .LVU35
+ 289 0002 00F18040 		add	r0, r0, #1073741824
+ 290 0006 00F5B840 		add	r0, r0, #23552
+ 291 000a 0160     		str	r1, [r0]
+ 147:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 292              		.loc 1 147 1 view .LVU36
+ 293 000c 7047     		bx	lr
+ 294              		.cfi_endproc
+ 295              	.LFE38:
+ 297              		.section	.text.GetENDPOINT,"ax",%progbits
+ 298              		.align	1
+ 299              		.global	GetENDPOINT
+ 300              		.syntax unified
+ 301              		.thumb
+ 302              		.thumb_func
+ 304              	GetENDPOINT:
+ 305              	.LVL7:
+ 306              	.LFB39:
+ 148:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 149:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 150:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetENDPOINT
+ 151:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Return the Endpoint register value.
+ 152:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 153:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 154:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Endpoint register value.
+ 155:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 156:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetENDPOINT(uint8_t bEpNum)
+ 157:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 307              		.loc 1 157 1 is_stmt 1 view -0
+ 308              		.cfi_startproc
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311              		@ link register save eliminated.
+ 158:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetENDPOINT(bEpNum));
+ 312              		.loc 1 158 3 view .LVU38
+ 313              		.loc 1 158 10 is_stmt 0 view .LVU39
+ 314 0000 8000     		lsls	r0, r0, #2
+ 315              	.LVL8:
+ 316              		.loc 1 158 10 view .LVU40
+ 317 0002 00F18040 		add	r0, r0, #1073741824
+ 318 0006 00F5B840 		add	r0, r0, #23552
+ 319 000a 0068     		ldr	r0, [r0]
+ 159:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 320              		.loc 1 159 1 view .LVU41
+ 321 000c 80B2     		uxth	r0, r0
+ 322 000e 7047     		bx	lr
+ 323              		.cfi_endproc
+ 324              	.LFE39:
+ 326              		.section	.text.SetEPType,"ax",%progbits
+ 327              		.align	1
+ 328              		.global	SetEPType
+ 329              		.syntax unified
+ 330              		.thumb
+ 331              		.thumb_func
+ 333              	SetEPType:
+ 334              	.LVL9:
+ 335              	.LFB40:
+ 160:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 161:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 162:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPType
+ 163:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : sets the type in the endpoint register.
+ 164:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 165:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wType: type definition.
+ 166:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 167:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 168:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 169:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPType(uint8_t bEpNum, uint16_t wType)
+ 170:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 336              		.loc 1 170 1 is_stmt 1 view -0
+ 337              		.cfi_startproc
+ 338              		@ args = 0, pretend = 0, frame = 0
+ 339              		@ frame_needed = 0, uses_anonymous_args = 0
+ 340              		@ link register save eliminated.
+ 171:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPType(bEpNum, wType);
+ 341              		.loc 1 171 3 view .LVU43
+ 342 0000 8000     		lsls	r0, r0, #2
+ 343              	.LVL10:
+ 344              		.loc 1 171 3 is_stmt 0 view .LVU44
+ 345 0002 00F18040 		add	r0, r0, #1073741824
+ 346 0006 00F5B840 		add	r0, r0, #23552
+ 347 000a 0368     		ldr	r3, [r0]
+ 348 000c 23F4EC43 		bic	r3, r3, #30208
+ 349 0010 23F07003 		bic	r3, r3, #112
+ 350 0014 0B43     		orrs	r3, r3, r1
+ 351 0016 9BB2     		uxth	r3, r3
+ 352 0018 0360     		str	r3, [r0]
+ 172:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 353              		.loc 1 172 1 view .LVU45
+ 354 001a 7047     		bx	lr
+ 355              		.cfi_endproc
+ 356              	.LFE40:
+ 358              		.section	.text.GetEPType,"ax",%progbits
+ 359              		.align	1
+ 360              		.global	GetEPType
+ 361              		.syntax unified
+ 362              		.thumb
+ 363              		.thumb_func
+ 365              	GetEPType:
+ 366              	.LVL11:
+ 367              	.LFB41:
+ 173:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 174:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 175:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPType
+ 176:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the endpoint type.
+ 177:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 178:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 179:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Endpoint Type
+ 180:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 181:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPType(uint8_t bEpNum)
+ 182:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 368              		.loc 1 182 1 is_stmt 1 view -0
+ 369              		.cfi_startproc
+ 370              		@ args = 0, pretend = 0, frame = 0
+ 371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 372              		@ link register save eliminated.
+ 183:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPType(bEpNum));
+ 373              		.loc 1 183 3 view .LVU47
+ 374              		.loc 1 183 10 is_stmt 0 view .LVU48
+ 375 0000 8000     		lsls	r0, r0, #2
+ 376              	.LVL12:
+ 377              		.loc 1 183 10 view .LVU49
+ 378 0002 00F18040 		add	r0, r0, #1073741824
+ 379 0006 00F5B840 		add	r0, r0, #23552
+ 380 000a 0068     		ldr	r0, [r0]
+ 184:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 381              		.loc 1 184 1 view .LVU50
+ 382 000c 00F4C060 		and	r0, r0, #1536
+ 383 0010 7047     		bx	lr
+ 384              		.cfi_endproc
+ 385              	.LFE41:
+ 387              		.section	.text.SetEPTxStatus,"ax",%progbits
+ 388              		.align	1
+ 389              		.global	SetEPTxStatus
+ 390              		.syntax unified
+ 391              		.thumb
+ 392              		.thumb_func
+ 394              	SetEPTxStatus:
+ 395              	.LVL13:
+ 396              	.LFB42:
+ 185:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 186:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 187:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPTxStatus
+ 188:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the status of Tx endpoint.
+ 189:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 190:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wState: new state.
+ 191:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 192:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 193:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 194:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPTxStatus(uint8_t bEpNum, uint16_t wState)
+ 195:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 397              		.loc 1 195 1 is_stmt 1 view -0
+ 398              		.cfi_startproc
+ 399              		@ args = 0, pretend = 0, frame = 0
+ 400              		@ frame_needed = 0, uses_anonymous_args = 0
+ 401              		@ link register save eliminated.
+ 402              	.LBB4:
+ 196:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPTxStatus(bEpNum, wState);
+ 403              		.loc 1 196 3 view .LVU52
+ 404              		.loc 1 196 3 view .LVU53
+ 405 0000 8000     		lsls	r0, r0, #2
+ 406              	.LVL14:
+ 407              		.loc 1 196 3 is_stmt 0 view .LVU54
+ 408 0002 00F18040 		add	r0, r0, #1073741824
+ 409 0006 00F5B840 		add	r0, r0, #23552
+ 410 000a 0368     		ldr	r3, [r0]
+ 411 000c CA06     		lsls	r2, r1, #27
+ 412 000e 23F4E043 		bic	r3, r3, #28672
+ 413 0012 23F04003 		bic	r3, r3, #64
+ 414 0016 9BB2     		uxth	r3, r3
+ 415              	.LVL15:
+ 416              		.loc 1 196 3 is_stmt 1 view .LVU55
+ 417              		.loc 1 196 3 view .LVU56
+ 418 0018 48BF     		it	mi
+ 419 001a 83F01003 		eormi	r3, r3, #16
+ 420              	.LVL16:
+ 421              		.loc 1 196 3 view .LVU57
+ 422 001e 8A06     		lsls	r2, r1, #26
+ 423              		.loc 1 196 3 view .LVU58
+ 424 0020 48BF     		it	mi
+ 425 0022 83F02003 		eormi	r3, r3, #32
+ 426              	.LVL17:
+ 427              		.loc 1 196 3 view .LVU59
+ 428 0026 43F40043 		orr	r3, r3, #32768
+ 429              	.LVL18:
+ 430              		.loc 1 196 3 is_stmt 0 view .LVU60
+ 431 002a 43F08003 		orr	r3, r3, #128
+ 432 002e 0360     		str	r3, [r0]
+ 433              	.LBE4:
+ 434              		.loc 1 196 33 is_stmt 1 view .LVU61
+ 197:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 435              		.loc 1 197 1 is_stmt 0 view .LVU62
+ 436 0030 7047     		bx	lr
+ 437              		.cfi_endproc
+ 438              	.LFE42:
+ 440              		.section	.text.SetEPRxStatus,"ax",%progbits
+ 441              		.align	1
+ 442              		.global	SetEPRxStatus
+ 443              		.syntax unified
+ 444              		.thumb
+ 445              		.thumb_func
+ 447              	SetEPRxStatus:
+ 448              	.LVL19:
+ 449              	.LFB43:
+ 198:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 199:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 200:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPRxStatus
+ 201:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the status of Rx endpoint.
+ 202:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 203:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wState: new state.
+ 204:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 205:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 206:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 207:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPRxStatus(uint8_t bEpNum, uint16_t wState)
+ 208:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 450              		.loc 1 208 1 is_stmt 1 view -0
+ 451              		.cfi_startproc
+ 452              		@ args = 0, pretend = 0, frame = 0
+ 453              		@ frame_needed = 0, uses_anonymous_args = 0
+ 454              		@ link register save eliminated.
+ 455              	.LBB5:
+ 209:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxStatus(bEpNum, wState);
+ 456              		.loc 1 209 3 view .LVU64
+ 457              		.loc 1 209 3 view .LVU65
+ 458 0000 8000     		lsls	r0, r0, #2
+ 459              	.LVL20:
+ 460              		.loc 1 209 3 is_stmt 0 view .LVU66
+ 461 0002 00F18040 		add	r0, r0, #1073741824
+ 462 0006 00F5B840 		add	r0, r0, #23552
+ 463 000a 0368     		ldr	r3, [r0]
+ 464 000c CA04     		lsls	r2, r1, #19
+ 465 000e 23F48043 		bic	r3, r3, #16384
+ 466 0012 23F07003 		bic	r3, r3, #112
+ 467 0016 9BB2     		uxth	r3, r3
+ 468              	.LVL21:
+ 469              		.loc 1 209 3 is_stmt 1 view .LVU67
+ 470              		.loc 1 209 3 view .LVU68
+ 471 0018 48BF     		it	mi
+ 472 001a 83F48053 		eormi	r3, r3, #4096
+ 473              	.LVL22:
+ 474              		.loc 1 209 3 view .LVU69
+ 475 001e 8A04     		lsls	r2, r1, #18
+ 476              		.loc 1 209 3 view .LVU70
+ 477 0020 48BF     		it	mi
+ 478 0022 83F40053 		eormi	r3, r3, #8192
+ 479              	.LVL23:
+ 480              		.loc 1 209 3 view .LVU71
+ 481 0026 43F40043 		orr	r3, r3, #32768
+ 482              	.LVL24:
+ 483              		.loc 1 209 3 is_stmt 0 view .LVU72
+ 484 002a 43F08003 		orr	r3, r3, #128
+ 485 002e 0360     		str	r3, [r0]
+ 486              	.LBE5:
+ 487              		.loc 1 209 33 is_stmt 1 view .LVU73
+ 210:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 488              		.loc 1 210 1 is_stmt 0 view .LVU74
+ 489 0030 7047     		bx	lr
+ 490              		.cfi_endproc
+ 491              	.LFE43:
+ 493              		.section	.text.SetDouBleBuffEPStall,"ax",%progbits
+ 494              		.align	1
+ 495              		.global	SetDouBleBuffEPStall
+ 496              		.syntax unified
+ 497              		.thumb
+ 498              		.thumb_func
+ 500              	SetDouBleBuffEPStall:
+ 501              	.LVL25:
+ 502              	.LFB44:
+ 211:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 212:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 213:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetDouBleBuffEPStall
+ 214:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : sets the status for Double Buffer Endpoint to STALL
+ 215:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 216:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  bDir: Endpoint direction.
+ 217:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 218:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 219:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 220:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetDouBleBuffEPStall(uint8_t bEpNum, uint8_t bDir)
+ 221:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 503              		.loc 1 221 1 is_stmt 1 view -0
+ 504              		.cfi_startproc
+ 505              		@ args = 0, pretend = 0, frame = 0
+ 506              		@ frame_needed = 0, uses_anonymous_args = 0
+ 507              		@ link register save eliminated.
+ 222:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   uint16_t Endpoint_DTOG_Status;
+ 508              		.loc 1 222 3 view .LVU76
+ 223:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   Endpoint_DTOG_Status = GetENDPOINT(bEpNum);
+ 509              		.loc 1 223 3 view .LVU77
+ 510              	.LBB6:
+ 511              	.LBI6:
+ 156:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 512              		.loc 1 156 10 view .LVU78
+ 513              	.LBB7:
+ 158:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 514              		.loc 1 158 3 view .LVU79
+ 158:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 515              		.loc 1 158 10 is_stmt 0 view .LVU80
+ 516 0000 8000     		lsls	r0, r0, #2
+ 517              	.LVL26:
+ 158:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 518              		.loc 1 158 10 view .LVU81
+ 519 0002 00F18040 		add	r0, r0, #1073741824
+ 520 0006 00F5B840 		add	r0, r0, #23552
+ 521              	.LBE7:
+ 522              	.LBE6:
+ 224:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   if (bDir == EP_DBUF_OUT)
+ 523              		.loc 1 224 6 view .LVU82
+ 524 000a 0129     		cmp	r1, #1
+ 525              	.LBB9:
+ 526              	.LBB8:
+ 158:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 527              		.loc 1 158 10 view .LVU83
+ 528 000c 0368     		ldr	r3, [r0]
+ 529              	.LVL27:
+ 158:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 530              		.loc 1 158 10 view .LVU84
+ 531              	.LBE8:
+ 532              	.LBE9:
+ 533              		.loc 1 224 3 is_stmt 1 view .LVU85
+ 534              		.loc 1 224 6 is_stmt 0 view .LVU86
+ 535 000e 05D1     		bne	.L51
+ 225:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   { /* OUT double buffered endpoint */
+ 226:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****     _SetENDPOINT(bEpNum, Endpoint_DTOG_Status & ~EPRX_DTOG1);
+ 536              		.loc 1 226 5 is_stmt 1 view .LVU87
+ 537 0010 23F48053 		bic	r3, r3, #4096
+ 538              	.LVL28:
+ 539              	.L53:
+ 227:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   }
+ 228:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   else if (bDir == EP_DBUF_IN)
+ 229:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   { /* IN double buffered endpoint */
+ 230:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****     _SetENDPOINT(bEpNum, Endpoint_DTOG_Status & ~EPTX_DTOG1);
+ 540              		.loc 1 230 5 is_stmt 0 view .LVU88
+ 541 0014 1B04     		lsls	r3, r3, #16
+ 542 0016 1B0C     		lsrs	r3, r3, #16
+ 543 0018 0360     		str	r3, [r0]
+ 544              	.L50:
+ 231:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   }
+ 232:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 545              		.loc 1 232 1 view .LVU89
+ 546 001a 7047     		bx	lr
+ 547              	.LVL29:
+ 548              	.L51:
+ 228:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   { /* IN double buffered endpoint */
+ 549              		.loc 1 228 8 is_stmt 1 view .LVU90
+ 228:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   { /* IN double buffered endpoint */
+ 550              		.loc 1 228 11 is_stmt 0 view .LVU91
+ 551 001c 0229     		cmp	r1, #2
+ 552 001e FCD1     		bne	.L50
+ 230:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   }
+ 553              		.loc 1 230 5 is_stmt 1 view .LVU92
+ 554 0020 23F01003 		bic	r3, r3, #16
+ 555              	.LVL30:
+ 230:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   }
+ 556              		.loc 1 230 5 is_stmt 0 view .LVU93
+ 557 0024 F6E7     		b	.L53
+ 558              		.cfi_endproc
+ 559              	.LFE44:
+ 561              		.section	.text.GetEPTxStatus,"ax",%progbits
+ 562              		.align	1
+ 563              		.global	GetEPTxStatus
+ 564              		.syntax unified
+ 565              		.thumb
+ 566              		.thumb_func
+ 568              	GetEPTxStatus:
+ 569              	.LVL31:
+ 570              	.LFB45:
+ 233:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 234:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 235:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPTxStatus
+ 236:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the endpoint Tx status.
+ 237:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 238:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 239:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Endpoint TX Status
+ 240:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 241:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPTxStatus(uint8_t bEpNum)
+ 242:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 571              		.loc 1 242 1 is_stmt 1 view -0
+ 572              		.cfi_startproc
+ 573              		@ args = 0, pretend = 0, frame = 0
+ 574              		@ frame_needed = 0, uses_anonymous_args = 0
+ 575              		@ link register save eliminated.
+ 243:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPTxStatus(bEpNum));
+ 576              		.loc 1 243 3 view .LVU95
+ 577              		.loc 1 243 10 is_stmt 0 view .LVU96
+ 578 0000 8000     		lsls	r0, r0, #2
+ 579              	.LVL32:
+ 580              		.loc 1 243 10 view .LVU97
+ 581 0002 00F18040 		add	r0, r0, #1073741824
+ 582 0006 00F5B840 		add	r0, r0, #23552
+ 583 000a 0068     		ldr	r0, [r0]
+ 244:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 584              		.loc 1 244 1 view .LVU98
+ 585 000c 00F03000 		and	r0, r0, #48
+ 586 0010 7047     		bx	lr
+ 587              		.cfi_endproc
+ 588              	.LFE45:
+ 590              		.section	.text.GetEPRxStatus,"ax",%progbits
+ 591              		.align	1
+ 592              		.global	GetEPRxStatus
+ 593              		.syntax unified
+ 594              		.thumb
+ 595              		.thumb_func
+ 597              	GetEPRxStatus:
+ 598              	.LVL33:
+ 599              	.LFB46:
+ 245:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 246:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 247:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPRxStatus
+ 248:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the endpoint Rx status.
+ 249:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 250:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 251:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Endpoint RX Status
+ 252:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 253:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPRxStatus(uint8_t bEpNum)
+ 254:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 600              		.loc 1 254 1 is_stmt 1 view -0
+ 601              		.cfi_startproc
+ 602              		@ args = 0, pretend = 0, frame = 0
+ 603              		@ frame_needed = 0, uses_anonymous_args = 0
+ 604              		@ link register save eliminated.
+ 255:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPRxStatus(bEpNum));
+ 605              		.loc 1 255 3 view .LVU100
+ 606              		.loc 1 255 10 is_stmt 0 view .LVU101
+ 607 0000 8000     		lsls	r0, r0, #2
+ 608              	.LVL34:
+ 609              		.loc 1 255 10 view .LVU102
+ 610 0002 00F18040 		add	r0, r0, #1073741824
+ 611 0006 00F5B840 		add	r0, r0, #23552
+ 612 000a 0068     		ldr	r0, [r0]
+ 256:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 613              		.loc 1 256 1 view .LVU103
+ 614 000c 00F44050 		and	r0, r0, #12288
+ 615 0010 7047     		bx	lr
+ 616              		.cfi_endproc
+ 617              	.LFE46:
+ 619              		.section	.text.SetEPTxValid,"ax",%progbits
+ 620              		.align	1
+ 621              		.global	SetEPTxValid
+ 622              		.syntax unified
+ 623              		.thumb
+ 624              		.thumb_func
+ 626              	SetEPTxValid:
+ 627              	.LVL35:
+ 628              	.LFB47:
+ 257:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 258:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 259:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPTxValid
+ 260:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Valid the endpoint Tx Status.
+ 261:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.  
+ 262:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 263:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 264:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 265:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPTxValid(uint8_t bEpNum)
+ 266:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 629              		.loc 1 266 1 is_stmt 1 view -0
+ 630              		.cfi_startproc
+ 631              		@ args = 0, pretend = 0, frame = 0
+ 632              		@ frame_needed = 0, uses_anonymous_args = 0
+ 633              		@ link register save eliminated.
+ 634              	.LBB10:
+ 267:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPTxStatus(bEpNum, EP_TX_VALID);
+ 635              		.loc 1 267 3 view .LVU105
+ 636              		.loc 1 267 3 view .LVU106
+ 637 0000 8000     		lsls	r0, r0, #2
+ 638              	.LVL36:
+ 639              		.loc 1 267 3 is_stmt 0 view .LVU107
+ 640 0002 00F18040 		add	r0, r0, #1073741824
+ 641 0006 00F5B840 		add	r0, r0, #23552
+ 642 000a 0368     		ldr	r3, [r0]
+ 643 000c 23F4E043 		bic	r3, r3, #28672
+ 644 0010 23F04003 		bic	r3, r3, #64
+ 645 0014 9BB2     		uxth	r3, r3
+ 646              	.LVL37:
+ 647              		.loc 1 267 3 is_stmt 1 view .LVU108
+ 648              		.loc 1 267 3 view .LVU109
+ 649              		.loc 1 267 3 view .LVU110
+ 650              		.loc 1 267 3 view .LVU111
+ 651              		.loc 1 267 3 view .LVU112
+ 652 0016 83F03003 		eor	r3, r3, #48
+ 653              	.LVL38:
+ 654              		.loc 1 267 3 is_stmt 0 view .LVU113
+ 655 001a 43F40043 		orr	r3, r3, #32768
+ 656              	.LVL39:
+ 657              		.loc 1 267 3 view .LVU114
+ 658 001e 43F08003 		orr	r3, r3, #128
+ 659 0022 0360     		str	r3, [r0]
+ 660              	.LBE10:
+ 661              		.loc 1 267 38 is_stmt 1 view .LVU115
+ 268:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 662              		.loc 1 268 1 is_stmt 0 view .LVU116
+ 663 0024 7047     		bx	lr
+ 664              		.cfi_endproc
+ 665              	.LFE47:
+ 667              		.section	.text.SetEPRxValid,"ax",%progbits
+ 668              		.align	1
+ 669              		.global	SetEPRxValid
+ 670              		.syntax unified
+ 671              		.thumb
+ 672              		.thumb_func
+ 674              	SetEPRxValid:
+ 675              	.LVL40:
+ 676              	.LFB48:
+ 269:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 270:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 271:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPRxValid
+ 272:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Valid the endpoint Rx Status.
+ 273:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 274:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 275:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 276:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 277:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPRxValid(uint8_t bEpNum)
+ 278:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 677              		.loc 1 278 1 is_stmt 1 view -0
+ 678              		.cfi_startproc
+ 679              		@ args = 0, pretend = 0, frame = 0
+ 680              		@ frame_needed = 0, uses_anonymous_args = 0
+ 681              		@ link register save eliminated.
+ 682              	.LBB11:
+ 279:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxStatus(bEpNum, EP_RX_VALID);
+ 683              		.loc 1 279 3 view .LVU118
+ 684              		.loc 1 279 3 view .LVU119
+ 685 0000 8000     		lsls	r0, r0, #2
+ 686              	.LVL41:
+ 687              		.loc 1 279 3 is_stmt 0 view .LVU120
+ 688 0002 00F18040 		add	r0, r0, #1073741824
+ 689 0006 00F5B840 		add	r0, r0, #23552
+ 690 000a 0368     		ldr	r3, [r0]
+ 691 000c 23F48043 		bic	r3, r3, #16384
+ 692 0010 23F07003 		bic	r3, r3, #112
+ 693 0014 9BB2     		uxth	r3, r3
+ 694              	.LVL42:
+ 695              		.loc 1 279 3 is_stmt 1 view .LVU121
+ 696              		.loc 1 279 3 view .LVU122
+ 697              		.loc 1 279 3 view .LVU123
+ 698              		.loc 1 279 3 view .LVU124
+ 699              		.loc 1 279 3 view .LVU125
+ 700 0016 83F44053 		eor	r3, r3, #12288
+ 701              	.LVL43:
+ 702              		.loc 1 279 3 is_stmt 0 view .LVU126
+ 703 001a 43F40043 		orr	r3, r3, #32768
+ 704              	.LVL44:
+ 705              		.loc 1 279 3 view .LVU127
+ 706 001e 43F08003 		orr	r3, r3, #128
+ 707 0022 0360     		str	r3, [r0]
+ 708              	.LBE11:
+ 709              		.loc 1 279 38 is_stmt 1 view .LVU128
+ 280:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 710              		.loc 1 280 1 is_stmt 0 view .LVU129
+ 711 0024 7047     		bx	lr
+ 712              		.cfi_endproc
+ 713              	.LFE48:
+ 715              		.section	.text.SetEP_KIND,"ax",%progbits
+ 716              		.align	1
+ 717              		.global	SetEP_KIND
+ 718              		.syntax unified
+ 719              		.thumb
+ 720              		.thumb_func
+ 722              	SetEP_KIND:
+ 723              	.LVL45:
+ 724              	.LFB49:
+ 281:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 282:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 283:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEP_KIND
+ 284:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Clear the EP_KIND bit.
+ 285:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 286:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 287:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 288:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 289:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEP_KIND(uint8_t bEpNum)
+ 290:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 725              		.loc 1 290 1 is_stmt 1 view -0
+ 726              		.cfi_startproc
+ 727              		@ args = 0, pretend = 0, frame = 0
+ 728              		@ frame_needed = 0, uses_anonymous_args = 0
+ 729              		@ link register save eliminated.
+ 291:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEP_KIND(bEpNum);
+ 730              		.loc 1 291 3 view .LVU131
+ 731 0000 40F60F73 		movw	r3, #3855
+ 732 0004 8000     		lsls	r0, r0, #2
+ 733              	.LVL46:
+ 734              		.loc 1 291 3 is_stmt 0 view .LVU132
+ 735 0006 00F18040 		add	r0, r0, #1073741824
+ 736 000a 00F5B840 		add	r0, r0, #23552
+ 737 000e 0268     		ldr	r2, [r0]
+ 738 0010 1340     		ands	r3, r3, r2
+ 739 0012 43F40143 		orr	r3, r3, #33024
+ 740 0016 43F08003 		orr	r3, r3, #128
+ 741 001a 0360     		str	r3, [r0]
+ 292:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 742              		.loc 1 292 1 view .LVU133
+ 743 001c 7047     		bx	lr
+ 744              		.cfi_endproc
+ 745              	.LFE49:
+ 747              		.section	.text.ClearEP_KIND,"ax",%progbits
+ 748              		.align	1
+ 749              		.global	ClearEP_KIND
+ 750              		.syntax unified
+ 751              		.thumb
+ 752              		.thumb_func
+ 754              	ClearEP_KIND:
+ 755              	.LVL47:
+ 756              	.LFB50:
+ 293:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 294:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 295:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ClearEP_KIND
+ 296:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : set the  EP_KIND bit.
+ 297:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 298:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 299:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 300:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 301:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void ClearEP_KIND(uint8_t bEpNum)
+ 302:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 757              		.loc 1 302 1 is_stmt 1 view -0
+ 758              		.cfi_startproc
+ 759              		@ args = 0, pretend = 0, frame = 0
+ 760              		@ frame_needed = 0, uses_anonymous_args = 0
+ 761              		@ link register save eliminated.
+ 303:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ClearEP_KIND(bEpNum);
+ 762              		.loc 1 303 3 view .LVU135
+ 763 0000 8000     		lsls	r0, r0, #2
+ 764              	.LVL48:
+ 765              		.loc 1 303 3 is_stmt 0 view .LVU136
+ 766 0002 00F18040 		add	r0, r0, #1073741824
+ 767 0006 00F5B840 		add	r0, r0, #23552
+ 768 000a 0368     		ldr	r3, [r0]
+ 769 000c 23F4F873 		bic	r3, r3, #496
+ 770 0010 1B05     		lsls	r3, r3, #20
+ 771 0012 1B0D     		lsrs	r3, r3, #20
+ 772 0014 43F40043 		orr	r3, r3, #32768
+ 773 0018 43F08003 		orr	r3, r3, #128
+ 774 001c 0360     		str	r3, [r0]
+ 304:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 775              		.loc 1 304 1 view .LVU137
+ 776 001e 7047     		bx	lr
+ 777              		.cfi_endproc
+ 778              	.LFE50:
+ 780              		.section	.text.Clear_Status_Out,"ax",%progbits
+ 781              		.align	1
+ 782              		.global	Clear_Status_Out
+ 783              		.syntax unified
+ 784              		.thumb
+ 785              		.thumb_func
+ 787              	Clear_Status_Out:
+ 788              	.LFB93:
+ 789              		.cfi_startproc
+ 790              		@ args = 0, pretend = 0, frame = 0
+ 791              		@ frame_needed = 0, uses_anonymous_args = 0
+ 792              		@ link register save eliminated.
+ 793 0000 FFF7FEBF 		b	ClearEP_KIND
+ 794              		.cfi_endproc
+ 795              	.LFE93:
+ 797              		.section	.text.Set_Status_Out,"ax",%progbits
+ 798              		.align	1
+ 799              		.global	Set_Status_Out
+ 800              		.syntax unified
+ 801              		.thumb
+ 802              		.thumb_func
+ 804              	Set_Status_Out:
+ 805              	.LFB89:
+ 806              		.cfi_startproc
+ 807              		@ args = 0, pretend = 0, frame = 0
+ 808              		@ frame_needed = 0, uses_anonymous_args = 0
+ 809              		@ link register save eliminated.
+ 810 0000 FFF7FEBF 		b	SetEP_KIND
+ 811              		.cfi_endproc
+ 812              	.LFE89:
+ 814              		.section	.text.SetEPDoubleBuff,"ax",%progbits
+ 815              		.align	1
+ 816              		.global	SetEPDoubleBuff
+ 817              		.syntax unified
+ 818              		.thumb
+ 819              		.thumb_func
+ 821              	SetEPDoubleBuff:
+ 822              	.LFB91:
+ 823              		.cfi_startproc
+ 824              		@ args = 0, pretend = 0, frame = 0
+ 825              		@ frame_needed = 0, uses_anonymous_args = 0
+ 826              		@ link register save eliminated.
+ 827 0000 FFF7FEBF 		b	SetEP_KIND
+ 828              		.cfi_endproc
+ 829              	.LFE91:
+ 831              		.section	.text.ClearEPDoubleBuff,"ax",%progbits
+ 832              		.align	1
+ 833              		.global	ClearEPDoubleBuff
+ 834              		.syntax unified
+ 835              		.thumb
+ 836              		.thumb_func
+ 838              	ClearEPDoubleBuff:
+ 839              	.LFB95:
+ 840              		.cfi_startproc
+ 841              		@ args = 0, pretend = 0, frame = 0
+ 842              		@ frame_needed = 0, uses_anonymous_args = 0
+ 843              		@ link register save eliminated.
+ 844 0000 FFF7FEBF 		b	ClearEP_KIND
+ 845              		.cfi_endproc
+ 846              	.LFE95:
+ 848              		.section	.text.GetTxStallStatus,"ax",%progbits
+ 849              		.align	1
+ 850              		.global	GetTxStallStatus
+ 851              		.syntax unified
+ 852              		.thumb
+ 853              		.thumb_func
+ 855              	GetTxStallStatus:
+ 856              	.LVL49:
+ 857              	.LFB55:
+ 305:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 306:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : Clear_Status_Out
+ 307:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Clear the Status Out of the related Endpoint
+ 308:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 309:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 310:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 311:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 312:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void Clear_Status_Out(uint8_t bEpNum)
+ 313:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 314:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ClearEP_KIND(bEpNum);
+ 315:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 316:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 317:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : Set_Status_Out
+ 318:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the Status Out of the related Endpoint
+ 319:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 320:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 321:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 322:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 323:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void Set_Status_Out(uint8_t bEpNum)
+ 324:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 325:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEP_KIND(bEpNum);
+ 326:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 327:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 328:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPDoubleBuff
+ 329:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Enable the double buffer feature for the endpoint. 
+ 330:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 331:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 332:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 333:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 334:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPDoubleBuff(uint8_t bEpNum)
+ 335:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 336:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEP_KIND(bEpNum);
+ 337:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 338:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 339:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ClearEPDoubleBuff
+ 340:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Disable the double buffer feature for the endpoint. 
+ 341:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 342:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 343:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 344:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 345:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void ClearEPDoubleBuff(uint8_t bEpNum)
+ 346:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 347:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ClearEP_KIND(bEpNum);
+ 348:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 349:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 350:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetTxStallStatus
+ 351:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the Stall status of the Tx endpoint.
+ 352:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 353:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 354:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Tx Stall status.
+ 355:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 356:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetTxStallStatus(uint8_t bEpNum)
+ 357:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 858              		.loc 1 357 1 is_stmt 1 view -0
+ 859              		.cfi_startproc
+ 860              		@ args = 0, pretend = 0, frame = 0
+ 861              		@ frame_needed = 0, uses_anonymous_args = 0
+ 862              		@ link register save eliminated.
+ 358:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetTxStallStatus(bEpNum));
+ 863              		.loc 1 358 3 view .LVU139
+ 864              		.loc 1 358 10 is_stmt 0 view .LVU140
+ 865 0000 8000     		lsls	r0, r0, #2
+ 866              	.LVL50:
+ 867              		.loc 1 358 10 view .LVU141
+ 868 0002 00F18040 		add	r0, r0, #1073741824
+ 869 0006 00F5B840 		add	r0, r0, #23552
+ 870 000a 0068     		ldr	r0, [r0]
+ 871 000c 00F03000 		and	r0, r0, #48
+ 359:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 872              		.loc 1 359 1 view .LVU142
+ 873 0010 A0F11003 		sub	r3, r0, #16
+ 874 0014 5842     		rsbs	r0, r3, #0
+ 875 0016 5841     		adcs	r0, r0, r3
+ 876 0018 7047     		bx	lr
+ 877              		.cfi_endproc
+ 878              	.LFE55:
+ 880              		.section	.text.GetRxStallStatus,"ax",%progbits
+ 881              		.align	1
+ 882              		.global	GetRxStallStatus
+ 883              		.syntax unified
+ 884              		.thumb
+ 885              		.thumb_func
+ 887              	GetRxStallStatus:
+ 888              	.LVL51:
+ 889              	.LFB56:
+ 360:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 361:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetRxStallStatus
+ 362:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the Stall status of the Rx endpoint. 
+ 363:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 364:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 365:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Rx Stall status.
+ 366:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 367:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetRxStallStatus(uint8_t bEpNum)
+ 368:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 890              		.loc 1 368 1 is_stmt 1 view -0
+ 891              		.cfi_startproc
+ 892              		@ args = 0, pretend = 0, frame = 0
+ 893              		@ frame_needed = 0, uses_anonymous_args = 0
+ 894              		@ link register save eliminated.
+ 369:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetRxStallStatus(bEpNum));
+ 895              		.loc 1 369 3 view .LVU144
+ 896              		.loc 1 369 10 is_stmt 0 view .LVU145
+ 897 0000 8000     		lsls	r0, r0, #2
+ 898              	.LVL52:
+ 899              		.loc 1 369 10 view .LVU146
+ 900 0002 00F18040 		add	r0, r0, #1073741824
+ 901 0006 00F5B840 		add	r0, r0, #23552
+ 902 000a 0068     		ldr	r0, [r0]
+ 903 000c 00F44050 		and	r0, r0, #12288
+ 370:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 904              		.loc 1 370 1 view .LVU147
+ 905 0010 A0F58053 		sub	r3, r0, #4096
+ 906 0014 5842     		rsbs	r0, r3, #0
+ 907 0016 5841     		adcs	r0, r0, r3
+ 908 0018 7047     		bx	lr
+ 909              		.cfi_endproc
+ 910              	.LFE56:
+ 912              		.section	.text.ClearEP_CTR_RX,"ax",%progbits
+ 913              		.align	1
+ 914              		.global	ClearEP_CTR_RX
+ 915              		.syntax unified
+ 916              		.thumb
+ 917              		.thumb_func
+ 919              	ClearEP_CTR_RX:
+ 920              	.LVL53:
+ 921              	.LFB57:
+ 371:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 372:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ClearEP_CTR_RX
+ 373:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Clear the CTR_RX bit.
+ 374:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 375:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 376:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 377:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 378:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void ClearEP_CTR_RX(uint8_t bEpNum)
+ 379:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 922              		.loc 1 379 1 is_stmt 1 view -0
+ 923              		.cfi_startproc
+ 924              		@ args = 0, pretend = 0, frame = 0
+ 925              		@ frame_needed = 0, uses_anonymous_args = 0
+ 926              		@ link register save eliminated.
+ 380:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ClearEP_CTR_RX(bEpNum);
+ 927              		.loc 1 380 3 view .LVU149
+ 928 0000 8000     		lsls	r0, r0, #2
+ 929              	.LVL54:
+ 930              		.loc 1 380 3 is_stmt 0 view .LVU150
+ 931 0002 00F18040 		add	r0, r0, #1073741824
+ 932 0006 00F5B840 		add	r0, r0, #23552
+ 933 000a 0368     		ldr	r3, [r0]
+ 934 000c 23F07003 		bic	r3, r3, #112
+ 935 0010 1B05     		lsls	r3, r3, #20
+ 936 0012 1B0D     		lsrs	r3, r3, #20
+ 937 0014 0360     		str	r3, [r0]
+ 381:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 938              		.loc 1 381 1 view .LVU151
+ 939 0016 7047     		bx	lr
+ 940              		.cfi_endproc
+ 941              	.LFE57:
+ 943              		.section	.text.ClearEP_CTR_TX,"ax",%progbits
+ 944              		.align	1
+ 945              		.global	ClearEP_CTR_TX
+ 946              		.syntax unified
+ 947              		.thumb
+ 948              		.thumb_func
+ 950              	ClearEP_CTR_TX:
+ 951              	.LVL55:
+ 952              	.LFB58:
+ 382:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 383:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ClearEP_CTR_TX
+ 384:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Clear the CTR_TX bit.
+ 385:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 386:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 387:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 388:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 389:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void ClearEP_CTR_TX(uint8_t bEpNum)
+ 390:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 953              		.loc 1 390 1 is_stmt 1 view -0
+ 954              		.cfi_startproc
+ 955              		@ args = 0, pretend = 0, frame = 0
+ 956              		@ frame_needed = 0, uses_anonymous_args = 0
+ 957              		@ link register save eliminated.
+ 391:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ClearEP_CTR_TX(bEpNum);
+ 958              		.loc 1 391 3 view .LVU153
+ 959 0000 8000     		lsls	r0, r0, #2
+ 960              	.LVL56:
+ 961              		.loc 1 391 3 is_stmt 0 view .LVU154
+ 962 0002 00F18040 		add	r0, r0, #1073741824
+ 963 0006 00F5B840 		add	r0, r0, #23552
+ 964 000a 0368     		ldr	r3, [r0]
+ 965 000c 23F4E143 		bic	r3, r3, #28800
+ 966 0010 23F07003 		bic	r3, r3, #112
+ 967 0014 1B04     		lsls	r3, r3, #16
+ 968 0016 1B0C     		lsrs	r3, r3, #16
+ 969 0018 0360     		str	r3, [r0]
+ 392:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 970              		.loc 1 392 1 view .LVU155
+ 971 001a 7047     		bx	lr
+ 972              		.cfi_endproc
+ 973              	.LFE58:
+ 975              		.section	.text.ToggleDTOG_RX,"ax",%progbits
+ 976              		.align	1
+ 977              		.global	ToggleDTOG_RX
+ 978              		.syntax unified
+ 979              		.thumb
+ 980              		.thumb_func
+ 982              	ToggleDTOG_RX:
+ 983              	.LVL57:
+ 984              	.LFB59:
+ 393:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 394:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ToggleDTOG_RX
+ 395:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Toggle the DTOG_RX bit.
+ 396:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 397:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 398:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 399:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 400:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void ToggleDTOG_RX(uint8_t bEpNum)
+ 401:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 985              		.loc 1 401 1 is_stmt 1 view -0
+ 986              		.cfi_startproc
+ 987              		@ args = 0, pretend = 0, frame = 0
+ 988              		@ frame_needed = 0, uses_anonymous_args = 0
+ 989              		@ link register save eliminated.
+ 402:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ToggleDTOG_RX(bEpNum);
+ 990              		.loc 1 402 3 view .LVU157
+ 991 0000 8000     		lsls	r0, r0, #2
+ 992              	.LVL58:
+ 993              		.loc 1 402 3 is_stmt 0 view .LVU158
+ 994 0002 00F18040 		add	r0, r0, #1073741824
+ 995 0006 00F5B840 		add	r0, r0, #23552
+ 996 000a 0368     		ldr	r3, [r0]
+ 997 000c 23F0F003 		bic	r3, r3, #240
+ 998 0010 1B05     		lsls	r3, r3, #20
+ 999 0012 1B0D     		lsrs	r3, r3, #20
+ 1000 0014 43F44043 		orr	r3, r3, #49152
+ 1001 0018 43F08003 		orr	r3, r3, #128
+ 1002 001c 0360     		str	r3, [r0]
+ 403:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1003              		.loc 1 403 1 view .LVU159
+ 1004 001e 7047     		bx	lr
+ 1005              		.cfi_endproc
+ 1006              	.LFE59:
+ 1008              		.section	.text.ToggleDTOG_TX,"ax",%progbits
+ 1009              		.align	1
+ 1010              		.global	ToggleDTOG_TX
+ 1011              		.syntax unified
+ 1012              		.thumb
+ 1013              		.thumb_func
+ 1015              	ToggleDTOG_TX:
+ 1016              	.LVL59:
+ 1017              	.LFB60:
+ 404:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 405:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ToggleDTOG_TX
+ 406:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Toggle the DTOG_TX bit.
+ 407:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 408:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 409:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 410:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 411:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void ToggleDTOG_TX(uint8_t bEpNum)
+ 412:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1018              		.loc 1 412 1 is_stmt 1 view -0
+ 1019              		.cfi_startproc
+ 1020              		@ args = 0, pretend = 0, frame = 0
+ 1021              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1022              		@ link register save eliminated.
+ 413:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ToggleDTOG_TX(bEpNum);
+ 1023              		.loc 1 413 3 view .LVU161
+ 1024 0000 8000     		lsls	r0, r0, #2
+ 1025              	.LVL60:
+ 1026              		.loc 1 413 3 is_stmt 0 view .LVU162
+ 1027 0002 00F18040 		add	r0, r0, #1073741824
+ 1028 0006 00F5B840 		add	r0, r0, #23552
+ 1029 000a 0368     		ldr	r3, [r0]
+ 1030 000c 23F0F003 		bic	r3, r3, #240
+ 1031 0010 1B05     		lsls	r3, r3, #20
+ 1032 0012 1B0D     		lsrs	r3, r3, #20
+ 1033 0014 43F40043 		orr	r3, r3, #32768
+ 1034 0018 43F0C003 		orr	r3, r3, #192
+ 1035 001c 0360     		str	r3, [r0]
+ 414:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1036              		.loc 1 414 1 view .LVU163
+ 1037 001e 7047     		bx	lr
+ 1038              		.cfi_endproc
+ 1039              	.LFE60:
+ 1041              		.section	.text.ClearDTOG_RX,"ax",%progbits
+ 1042              		.align	1
+ 1043              		.global	ClearDTOG_RX
+ 1044              		.syntax unified
+ 1045              		.thumb
+ 1046              		.thumb_func
+ 1048              	ClearDTOG_RX:
+ 1049              	.LVL61:
+ 1050              	.LFB61:
+ 415:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 416:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ClearDTOG_RX.
+ 417:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Clear the DTOG_RX bit.
+ 418:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 419:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 420:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 421:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 422:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void ClearDTOG_RX(uint8_t bEpNum)
+ 423:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1051              		.loc 1 423 1 is_stmt 1 view -0
+ 1052              		.cfi_startproc
+ 1053              		@ args = 0, pretend = 0, frame = 0
+ 1054              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1055              		@ link register save eliminated.
+ 424:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ClearDTOG_RX(bEpNum);
+ 1056              		.loc 1 424 3 view .LVU165
+ 1057 0000 8000     		lsls	r0, r0, #2
+ 1058              	.LVL62:
+ 1059              		.loc 1 424 3 is_stmt 0 view .LVU166
+ 1060 0002 00F18040 		add	r0, r0, #1073741824
+ 1061 0006 00F5B840 		add	r0, r0, #23552
+ 1062 000a 0368     		ldr	r3, [r0]
+ 1063 000c 5B04     		lsls	r3, r3, #17
+ 1064 000e 09D5     		bpl	.L70
+ 1065              		.loc 1 424 3 is_stmt 1 discriminator 1 view .LVU167
+ 1066 0010 0368     		ldr	r3, [r0]
+ 1067 0012 23F0F003 		bic	r3, r3, #240
+ 1068 0016 1B05     		lsls	r3, r3, #20
+ 1069 0018 1B0D     		lsrs	r3, r3, #20
+ 1070 001a 43F44043 		orr	r3, r3, #49152
+ 1071 001e 43F08003 		orr	r3, r3, #128
+ 1072 0022 0360     		str	r3, [r0]
+ 1073              	.L70:
+ 425:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1074              		.loc 1 425 1 is_stmt 0 view .LVU168
+ 1075 0024 7047     		bx	lr
+ 1076              		.cfi_endproc
+ 1077              	.LFE61:
+ 1079              		.section	.text.ClearDTOG_TX,"ax",%progbits
+ 1080              		.align	1
+ 1081              		.global	ClearDTOG_TX
+ 1082              		.syntax unified
+ 1083              		.thumb
+ 1084              		.thumb_func
+ 1086              	ClearDTOG_TX:
+ 1087              	.LVL63:
+ 1088              	.LFB62:
+ 426:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 427:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ClearDTOG_TX.
+ 428:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Clear the DTOG_TX bit.
+ 429:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 430:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 431:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 432:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 433:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void ClearDTOG_TX(uint8_t bEpNum)
+ 434:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1089              		.loc 1 434 1 is_stmt 1 view -0
+ 1090              		.cfi_startproc
+ 1091              		@ args = 0, pretend = 0, frame = 0
+ 1092              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1093              		@ link register save eliminated.
+ 435:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _ClearDTOG_TX(bEpNum);
+ 1094              		.loc 1 435 3 view .LVU170
+ 1095 0000 8000     		lsls	r0, r0, #2
+ 1096              	.LVL64:
+ 1097              		.loc 1 435 3 is_stmt 0 view .LVU171
+ 1098 0002 00F18040 		add	r0, r0, #1073741824
+ 1099 0006 00F5B840 		add	r0, r0, #23552
+ 1100 000a 0368     		ldr	r3, [r0]
+ 1101 000c 5B06     		lsls	r3, r3, #25
+ 1102 000e 09D5     		bpl	.L75
+ 1103              		.loc 1 435 3 is_stmt 1 discriminator 1 view .LVU172
+ 1104 0010 0368     		ldr	r3, [r0]
+ 1105 0012 23F0F003 		bic	r3, r3, #240
+ 1106 0016 1B05     		lsls	r3, r3, #20
+ 1107 0018 1B0D     		lsrs	r3, r3, #20
+ 1108 001a 43F40043 		orr	r3, r3, #32768
+ 1109 001e 43F0C003 		orr	r3, r3, #192
+ 1110 0022 0360     		str	r3, [r0]
+ 1111              	.L75:
+ 436:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1112              		.loc 1 436 1 is_stmt 0 view .LVU173
+ 1113 0024 7047     		bx	lr
+ 1114              		.cfi_endproc
+ 1115              	.LFE62:
+ 1117              		.section	.text.SetEPAddress,"ax",%progbits
+ 1118              		.align	1
+ 1119              		.global	SetEPAddress
+ 1120              		.syntax unified
+ 1121              		.thumb
+ 1122              		.thumb_func
+ 1124              	SetEPAddress:
+ 1125              	.LVL65:
+ 1126              	.LFB63:
+ 437:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 438:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPAddress
+ 439:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the endpoint address.
+ 440:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.
+ 441:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  bAddr: New endpoint address.
+ 442:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 443:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 444:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 445:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPAddress(uint8_t bEpNum, uint8_t bAddr)
+ 446:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1127              		.loc 1 446 1 is_stmt 1 view -0
+ 1128              		.cfi_startproc
+ 1129              		@ args = 0, pretend = 0, frame = 0
+ 1130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1131              		@ link register save eliminated.
+ 447:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPAddress(bEpNum, bAddr);
+ 1132              		.loc 1 447 3 view .LVU175
+ 1133 0000 8000     		lsls	r0, r0, #2
+ 1134              	.LVL66:
+ 1135              		.loc 1 447 3 is_stmt 0 view .LVU176
+ 1136 0002 00F18040 		add	r0, r0, #1073741824
+ 1137 0006 00F5B840 		add	r0, r0, #23552
+ 1138 000a 0368     		ldr	r3, [r0]
+ 1139 000c 23F0F003 		bic	r3, r3, #240
+ 1140 0010 1B05     		lsls	r3, r3, #20
+ 1141 0012 1B0D     		lsrs	r3, r3, #20
+ 1142 0014 1943     		orrs	r1, r1, r3
+ 1143              	.LVL67:
+ 1144              		.loc 1 447 3 view .LVU177
+ 1145 0016 41F40041 		orr	r1, r1, #32768
+ 1146 001a 41F08001 		orr	r1, r1, #128
+ 1147 001e 0160     		str	r1, [r0]
+ 448:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1148              		.loc 1 448 1 view .LVU178
+ 1149 0020 7047     		bx	lr
+ 1150              		.cfi_endproc
+ 1151              	.LFE63:
+ 1153              		.section	.text.GetEPAddress,"ax",%progbits
+ 1154              		.align	1
+ 1155              		.global	GetEPAddress
+ 1156              		.syntax unified
+ 1157              		.thumb
+ 1158              		.thumb_func
+ 1160              	GetEPAddress:
+ 1161              	.LVL68:
+ 1162              	.LFB64:
+ 449:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 450:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPAddress
+ 451:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Get the endpoint address.
+ 452:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 453:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 454:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Endpoint address.
+ 455:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 456:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint8_t GetEPAddress(uint8_t bEpNum)
+ 457:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1163              		.loc 1 457 1 is_stmt 1 view -0
+ 1164              		.cfi_startproc
+ 1165              		@ args = 0, pretend = 0, frame = 0
+ 1166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1167              		@ link register save eliminated.
+ 458:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPAddress(bEpNum));
+ 1168              		.loc 1 458 3 view .LVU180
+ 1169              		.loc 1 458 10 is_stmt 0 view .LVU181
+ 1170 0000 8000     		lsls	r0, r0, #2
+ 1171              	.LVL69:
+ 1172              		.loc 1 458 10 view .LVU182
+ 1173 0002 00F18040 		add	r0, r0, #1073741824
+ 1174 0006 00F5B840 		add	r0, r0, #23552
+ 1175 000a 0068     		ldr	r0, [r0]
+ 459:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1176              		.loc 1 459 1 view .LVU183
+ 1177 000c 00F00F00 		and	r0, r0, #15
+ 1178 0010 7047     		bx	lr
+ 1179              		.cfi_endproc
+ 1180              	.LFE64:
+ 1182              		.section	.text.SetEPTxAddr,"ax",%progbits
+ 1183              		.align	1
+ 1184              		.global	SetEPTxAddr
+ 1185              		.syntax unified
+ 1186              		.thumb
+ 1187              		.thumb_func
+ 1189              	SetEPTxAddr:
+ 1190              	.LVL70:
+ 1191              	.LFB65:
+ 460:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 461:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPTxAddr
+ 462:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the endpoint Tx buffer address.
+ 463:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.
+ 464:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wAddr: new address. 
+ 465:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 466:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 467:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 468:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPTxAddr(uint8_t bEpNum, uint16_t wAddr)
+ 469:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1192              		.loc 1 469 1 is_stmt 1 view -0
+ 1193              		.cfi_startproc
+ 1194              		@ args = 0, pretend = 0, frame = 0
+ 1195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1196              		@ link register save eliminated.
+ 470:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPTxAddr(bEpNum, wAddr);
+ 1197              		.loc 1 470 3 view .LVU185
+ 1198 0000 074B     		ldr	r3, .L83
+ 1199 0002 4908     		lsrs	r1, r1, #1
+ 1200              	.LVL71:
+ 1201              		.loc 1 470 3 is_stmt 0 view .LVU186
+ 1202 0004 D3F8503C 		ldr	r3, [r3, #3152]
+ 1203 0008 4900     		lsls	r1, r1, #1
+ 1204 000a 9BB2     		uxth	r3, r3
+ 1205 000c 03EBC000 		add	r0, r3, r0, lsl #3
+ 1206              	.LVL72:
+ 1207              		.loc 1 470 3 view .LVU187
+ 1208 0010 00F10050 		add	r0, r0, #536870912
+ 1209 0014 00F54050 		add	r0, r0, #12288
+ 1210 0018 4000     		lsls	r0, r0, #1
+ 1211 001a 0160     		str	r1, [r0]
+ 471:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1212              		.loc 1 471 1 view .LVU188
+ 1213 001c 7047     		bx	lr
+ 1214              	.L84:
+ 1215 001e 00BF     		.align	2
+ 1216              	.L83:
+ 1217 0020 00500040 		.word	1073762304
+ 1218              		.cfi_endproc
+ 1219              	.LFE65:
+ 1221              		.section	.text.SetEPRxAddr,"ax",%progbits
+ 1222              		.align	1
+ 1223              		.global	SetEPRxAddr
+ 1224              		.syntax unified
+ 1225              		.thumb
+ 1226              		.thumb_func
+ 1228              	SetEPRxAddr:
+ 1229              	.LVL73:
+ 1230              	.LFB66:
+ 472:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 473:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPRxAddr
+ 474:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the endpoint Rx buffer address.
+ 475:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.
+ 476:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wAddr: new address.
+ 477:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 478:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 479:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 480:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPRxAddr(uint8_t bEpNum, uint16_t wAddr)
+ 481:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1231              		.loc 1 481 1 is_stmt 1 view -0
+ 1232              		.cfi_startproc
+ 1233              		@ args = 0, pretend = 0, frame = 0
+ 1234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1235              		@ link register save eliminated.
+ 482:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxAddr(bEpNum, wAddr);
+ 1236              		.loc 1 482 3 view .LVU190
+ 1237 0000 064B     		ldr	r3, .L86
+ 1238 0002 4908     		lsrs	r1, r1, #1
+ 1239              	.LVL74:
+ 1240              		.loc 1 482 3 is_stmt 0 view .LVU191
+ 1241 0004 D3F8503C 		ldr	r3, [r3, #3152]
+ 1242 0008 4900     		lsls	r1, r1, #1
+ 1243 000a 9BB2     		uxth	r3, r3
+ 1244 000c 03EBC000 		add	r0, r3, r0, lsl #3
+ 1245              	.LVL75:
+ 1246              		.loc 1 482 3 view .LVU192
+ 1247 0010 034B     		ldr	r3, .L86+4
+ 1248 0012 0344     		add	r3, r3, r0
+ 1249 0014 5B00     		lsls	r3, r3, #1
+ 1250 0016 1960     		str	r1, [r3]
+ 483:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1251              		.loc 1 483 1 view .LVU193
+ 1252 0018 7047     		bx	lr
+ 1253              	.L87:
+ 1254 001a 00BF     		.align	2
+ 1255              	.L86:
+ 1256 001c 00500040 		.word	1073762304
+ 1257 0020 04300020 		.word	536883204
+ 1258              		.cfi_endproc
+ 1259              	.LFE66:
+ 1261              		.section	.text.GetEPTxAddr,"ax",%progbits
+ 1262              		.align	1
+ 1263              		.global	GetEPTxAddr
+ 1264              		.syntax unified
+ 1265              		.thumb
+ 1266              		.thumb_func
+ 1268              	GetEPTxAddr:
+ 1269              	.LVL76:
+ 1270              	.LFB67:
+ 484:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 485:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPTxAddr
+ 486:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the endpoint Tx buffer address.
+ 487:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 488:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 489:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Rx buffer address. 
+ 490:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 491:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPTxAddr(uint8_t bEpNum)
+ 492:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1271              		.loc 1 492 1 is_stmt 1 view -0
+ 1272              		.cfi_startproc
+ 1273              		@ args = 0, pretend = 0, frame = 0
+ 1274              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1275              		@ link register save eliminated.
+ 493:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPTxAddr(bEpNum));
+ 1276              		.loc 1 493 3 view .LVU195
+ 1277              		.loc 1 493 10 is_stmt 0 view .LVU196
+ 1278 0000 064B     		ldr	r3, .L89
+ 1279 0002 D3F8503C 		ldr	r3, [r3, #3152]
+ 1280 0006 9BB2     		uxth	r3, r3
+ 1281 0008 03EBC000 		add	r0, r3, r0, lsl #3
+ 1282              	.LVL77:
+ 1283              		.loc 1 493 10 view .LVU197
+ 1284 000c 00F10050 		add	r0, r0, #536870912
+ 1285 0010 00F54050 		add	r0, r0, #12288
+ 1286 0014 4000     		lsls	r0, r0, #1
+ 494:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1287              		.loc 1 494 1 view .LVU198
+ 1288 0016 0088     		ldrh	r0, [r0]
+ 1289 0018 7047     		bx	lr
+ 1290              	.L90:
+ 1291 001a 00BF     		.align	2
+ 1292              	.L89:
+ 1293 001c 00500040 		.word	1073762304
+ 1294              		.cfi_endproc
+ 1295              	.LFE67:
+ 1297              		.section	.text.GetEPRxAddr,"ax",%progbits
+ 1298              		.align	1
+ 1299              		.global	GetEPRxAddr
+ 1300              		.syntax unified
+ 1301              		.thumb
+ 1302              		.thumb_func
+ 1304              	GetEPRxAddr:
+ 1305              	.LVL78:
+ 1306              	.LFB68:
+ 495:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 496:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPRxAddr.
+ 497:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the endpoint Rx buffer address.
+ 498:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 499:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 500:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Rx buffer address.
+ 501:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 502:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPRxAddr(uint8_t bEpNum)
+ 503:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1307              		.loc 1 503 1 is_stmt 1 view -0
+ 1308              		.cfi_startproc
+ 1309              		@ args = 0, pretend = 0, frame = 0
+ 1310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1311              		@ link register save eliminated.
+ 504:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPRxAddr(bEpNum));
+ 1312              		.loc 1 504 3 view .LVU200
+ 1313              		.loc 1 504 10 is_stmt 0 view .LVU201
+ 1314 0000 054B     		ldr	r3, .L92
+ 1315 0002 D3F8503C 		ldr	r3, [r3, #3152]
+ 1316 0006 9BB2     		uxth	r3, r3
+ 1317 0008 03EBC000 		add	r0, r3, r0, lsl #3
+ 1318              	.LVL79:
+ 1319              		.loc 1 504 10 view .LVU202
+ 1320 000c 034B     		ldr	r3, .L92+4
+ 1321 000e 0344     		add	r3, r3, r0
+ 1322 0010 5B00     		lsls	r3, r3, #1
+ 505:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1323              		.loc 1 505 1 view .LVU203
+ 1324 0012 1888     		ldrh	r0, [r3]
+ 1325 0014 7047     		bx	lr
+ 1326              	.L93:
+ 1327 0016 00BF     		.align	2
+ 1328              	.L92:
+ 1329 0018 00500040 		.word	1073762304
+ 1330 001c 04300020 		.word	536883204
+ 1331              		.cfi_endproc
+ 1332              	.LFE68:
+ 1334              		.section	.text.SetEPTxCount,"ax",%progbits
+ 1335              		.align	1
+ 1336              		.global	SetEPTxCount
+ 1337              		.syntax unified
+ 1338              		.thumb
+ 1339              		.thumb_func
+ 1341              	SetEPTxCount:
+ 1342              	.LVL80:
+ 1343              	.LFB69:
+ 506:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 507:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPTxCount.
+ 508:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the Tx count.
+ 509:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.
+ 510:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wCount: new count value.
+ 511:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 512:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 513:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 514:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPTxCount(uint8_t bEpNum, uint16_t wCount)
+ 515:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1344              		.loc 1 515 1 is_stmt 1 view -0
+ 1345              		.cfi_startproc
+ 1346              		@ args = 0, pretend = 0, frame = 0
+ 1347              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1348              		@ link register save eliminated.
+ 516:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPTxCount(bEpNum, wCount);
+ 1349              		.loc 1 516 3 view .LVU205
+ 1350 0000 054B     		ldr	r3, .L95
+ 1351 0002 D3F8503C 		ldr	r3, [r3, #3152]
+ 1352 0006 9BB2     		uxth	r3, r3
+ 1353 0008 03EBC000 		add	r0, r3, r0, lsl #3
+ 1354              	.LVL81:
+ 1355              		.loc 1 516 3 is_stmt 0 view .LVU206
+ 1356 000c 034B     		ldr	r3, .L95+4
+ 1357 000e 0344     		add	r3, r3, r0
+ 1358 0010 5B00     		lsls	r3, r3, #1
+ 1359 0012 1960     		str	r1, [r3]
+ 517:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1360              		.loc 1 517 1 view .LVU207
+ 1361 0014 7047     		bx	lr
+ 1362              	.L96:
+ 1363 0016 00BF     		.align	2
+ 1364              	.L95:
+ 1365 0018 00500040 		.word	1073762304
+ 1366 001c 02300020 		.word	536883202
+ 1367              		.cfi_endproc
+ 1368              	.LFE69:
+ 1370              		.section	.text.SetEPCountRxReg,"ax",%progbits
+ 1371              		.align	1
+ 1372              		.global	SetEPCountRxReg
+ 1373              		.syntax unified
+ 1374              		.thumb
+ 1375              		.thumb_func
+ 1377              	SetEPCountRxReg:
+ 1378              	.LVL82:
+ 1379              	.LFB70:
+ 518:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 519:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPCountRxReg.
+ 520:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the Count Rx Register value.
+ 521:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : *pdwReg: point to the register.
+ 522:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wCount: the new register value.
+ 523:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 524:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 525:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 526:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPCountRxReg(uint32_t *pdwReg, uint16_t wCount)
+ 527:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1380              		.loc 1 527 1 is_stmt 1 view -0
+ 1381              		.cfi_startproc
+ 1382              		@ args = 0, pretend = 0, frame = 0
+ 1383              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1384              		@ link register save eliminated.
+ 1385              	.LBB12:
+ 528:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPCountRxReg(dwReg, wCount);
+ 1386              		.loc 1 528 3 view .LVU209
+ 1387              		.loc 1 528 3 view .LVU210
+ 1388 0000 3E29     		cmp	r1, #62
+ 1389 0002 0AD9     		bls	.L98
+ 1390              		.loc 1 528 3 discriminator 1 view .LVU211
+ 1391 0004 4B09     		lsrs	r3, r1, #5
+ 1392              	.LVL83:
+ 1393              		.loc 1 528 3 discriminator 1 view .LVU212
+ 1394 0006 C906     		lsls	r1, r1, #27
+ 1395              	.LVL84:
+ 1396              		.loc 1 528 3 discriminator 1 view .LVU213
+ 1397 0008 04BF     		itt	eq
+ 1398 000a 03F1FF33 		addeq	r3, r3, #-1
+ 1399              	.LVL85:
+ 1400              		.loc 1 528 3 is_stmt 0 discriminator 1 view .LVU214
+ 1401 000e 9BB2     		uxtheq	r3, r3
+ 1402              	.LVL86:
+ 1403              		.loc 1 528 3 is_stmt 1 discriminator 1 view .LVU215
+ 1404 0010 9B02     		lsls	r3, r3, #10
+ 1405              	.LVL87:
+ 1406              		.loc 1 528 3 is_stmt 0 discriminator 1 view .LVU216
+ 1407 0012 43F40043 		orr	r3, r3, #32768
+ 1408              	.L105:
+ 1409              		.loc 1 528 3 discriminator 9 view .LVU217
+ 1410 0016 0360     		str	r3, [r0]
+ 1411              		.loc 1 528 3 is_stmt 1 discriminator 9 view .LVU218
+ 1412              	.LBE12:
+ 1413              		.loc 1 528 34 discriminator 9 view .LVU219
+ 529:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1414              		.loc 1 529 1 is_stmt 0 discriminator 9 view .LVU220
+ 1415 0018 7047     		bx	lr
+ 1416              	.LVL88:
+ 1417              	.L98:
+ 1418              	.LBB13:
+ 528:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPCountRxReg(dwReg, wCount);
+ 1419              		.loc 1 528 3 is_stmt 1 discriminator 2 view .LVU221
+ 1420 001a 4B08     		lsrs	r3, r1, #1
+ 1421              	.LVL89:
+ 528:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPCountRxReg(dwReg, wCount);
+ 1422              		.loc 1 528 3 discriminator 2 view .LVU222
+ 1423 001c CA07     		lsls	r2, r1, #31
+ 528:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPCountRxReg(dwReg, wCount);
+ 1424              		.loc 1 528 3 discriminator 2 view .LVU223
+ 1425 001e 48BF     		it	mi
+ 1426 0020 0133     		addmi	r3, r3, #1
+ 1427              	.LVL90:
+ 528:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPCountRxReg(dwReg, wCount);
+ 1428              		.loc 1 528 3 discriminator 2 view .LVU224
+ 1429 0022 9B02     		lsls	r3, r3, #10
+ 1430              	.LVL91:
+ 528:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPCountRxReg(dwReg, wCount);
+ 1431              		.loc 1 528 3 is_stmt 0 discriminator 2 view .LVU225
+ 1432 0024 F7E7     		b	.L105
+ 1433              	.LBE13:
+ 1434              		.cfi_endproc
+ 1435              	.LFE70:
+ 1437              		.section	.text.SetEPRxCount,"ax",%progbits
+ 1438              		.align	1
+ 1439              		.global	SetEPRxCount
+ 1440              		.syntax unified
+ 1441              		.thumb
+ 1442              		.thumb_func
+ 1444              	SetEPRxCount:
+ 1445              	.LVL92:
+ 1446              	.LFB71:
+ 530:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 531:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPRxCount
+ 532:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the Rx count.
+ 533:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 534:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wCount: the new count value.
+ 535:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 536:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 537:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 538:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPRxCount(uint8_t bEpNum, uint16_t wCount)
+ 539:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1447              		.loc 1 539 1 is_stmt 1 view -0
+ 1448              		.cfi_startproc
+ 1449              		@ args = 0, pretend = 0, frame = 0
+ 1450              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1451              		@ link register save eliminated.
+ 1452              	.LBB14:
+ 540:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxCount(bEpNum, wCount);
+ 1453              		.loc 1 540 3 view .LVU227
+ 1454 0000 0E4B     		ldr	r3, .L115
+ 1455 0002 0F4A     		ldr	r2, .L115+4
+ 1456 0004 D3F8503C 		ldr	r3, [r3, #3152]
+ 1457              	.LBB15:
+ 1458 0008 3E29     		cmp	r1, #62
+ 1459              	.LBE15:
+ 1460 000a 9BB2     		uxth	r3, r3
+ 1461 000c 03EBC000 		add	r0, r3, r0, lsl #3
+ 1462              	.LVL93:
+ 1463              		.loc 1 540 3 is_stmt 0 view .LVU228
+ 1464 0010 0244     		add	r2, r2, r0
+ 1465 0012 4FEA4202 		lsl	r2, r2, #1
+ 1466              	.LVL94:
+ 1467              	.LBB16:
+ 1468              		.loc 1 540 3 is_stmt 1 view .LVU229
+ 1469              		.loc 1 540 3 view .LVU230
+ 1470 0016 0AD9     		bls	.L107
+ 1471              		.loc 1 540 3 discriminator 1 view .LVU231
+ 1472 0018 4B09     		lsrs	r3, r1, #5
+ 1473              	.LVL95:
+ 1474              		.loc 1 540 3 discriminator 1 view .LVU232
+ 1475 001a C806     		lsls	r0, r1, #27
+ 1476              		.loc 1 540 3 discriminator 1 view .LVU233
+ 1477 001c 04BF     		itt	eq
+ 1478 001e 03F1FF33 		addeq	r3, r3, #-1
+ 1479              	.LVL96:
+ 1480              		.loc 1 540 3 is_stmt 0 discriminator 1 view .LVU234
+ 1481 0022 9BB2     		uxtheq	r3, r3
+ 1482              	.LVL97:
+ 1483              		.loc 1 540 3 is_stmt 1 discriminator 1 view .LVU235
+ 1484 0024 9B02     		lsls	r3, r3, #10
+ 1485              	.LVL98:
+ 1486              		.loc 1 540 3 is_stmt 0 discriminator 1 view .LVU236
+ 1487 0026 43F40043 		orr	r3, r3, #32768
+ 1488              	.LVL99:
+ 1489              	.L114:
+ 1490              		.loc 1 540 3 discriminator 9 view .LVU237
+ 1491 002a 1360     		str	r3, [r2]
+ 1492              		.loc 1 540 3 is_stmt 1 discriminator 9 view .LVU238
+ 1493              	.LBE16:
+ 1494              		.loc 1 540 3 discriminator 9 view .LVU239
+ 1495              	.LBE14:
+ 1496              		.loc 1 540 32 discriminator 9 view .LVU240
+ 541:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1497              		.loc 1 541 1 is_stmt 0 discriminator 9 view .LVU241
+ 1498 002c 7047     		bx	lr
+ 1499              	.LVL100:
+ 1500              	.L107:
+ 1501              	.LBB18:
+ 1502              	.LBB17:
+ 540:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxCount(bEpNum, wCount);
+ 1503              		.loc 1 540 3 is_stmt 1 discriminator 2 view .LVU242
+ 1504 002e 4B08     		lsrs	r3, r1, #1
+ 1505              	.LVL101:
+ 540:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxCount(bEpNum, wCount);
+ 1506              		.loc 1 540 3 discriminator 2 view .LVU243
+ 1507 0030 C907     		lsls	r1, r1, #31
+ 1508              	.LVL102:
+ 540:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxCount(bEpNum, wCount);
+ 1509              		.loc 1 540 3 discriminator 2 view .LVU244
+ 1510 0032 48BF     		it	mi
+ 1511 0034 0133     		addmi	r3, r3, #1
+ 1512              	.LVL103:
+ 540:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxCount(bEpNum, wCount);
+ 1513              		.loc 1 540 3 discriminator 2 view .LVU245
+ 1514 0036 9B02     		lsls	r3, r3, #10
+ 1515              	.LVL104:
+ 540:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPRxCount(bEpNum, wCount);
+ 1516              		.loc 1 540 3 is_stmt 0 discriminator 2 view .LVU246
+ 1517 0038 F7E7     		b	.L114
+ 1518              	.L116:
+ 1519 003a 00BF     		.align	2
+ 1520              	.L115:
+ 1521 003c 00500040 		.word	1073762304
+ 1522 0040 06300020 		.word	536883206
+ 1523              	.LBE17:
+ 1524              	.LBE18:
+ 1525              		.cfi_endproc
+ 1526              	.LFE71:
+ 1528              		.section	.text.GetEPTxCount,"ax",%progbits
+ 1529              		.align	1
+ 1530              		.global	GetEPTxCount
+ 1531              		.syntax unified
+ 1532              		.thumb
+ 1533              		.thumb_func
+ 1535              	GetEPTxCount:
+ 1536              	.LVL105:
+ 1537              	.LFB72:
+ 542:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 543:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPTxCount
+ 544:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Get the Tx count.
+ 545:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 546:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None
+ 547:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Tx count value.
+ 548:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 549:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPTxCount(uint8_t bEpNum)
+ 550:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1538              		.loc 1 550 1 is_stmt 1 view -0
+ 1539              		.cfi_startproc
+ 1540              		@ args = 0, pretend = 0, frame = 0
+ 1541              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1542              		@ link register save eliminated.
+ 551:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPTxCount(bEpNum));
+ 1543              		.loc 1 551 3 view .LVU248
+ 1544              		.loc 1 551 10 is_stmt 0 view .LVU249
+ 1545 0000 064B     		ldr	r3, .L118
+ 1546 0002 D3F8503C 		ldr	r3, [r3, #3152]
+ 1547 0006 9BB2     		uxth	r3, r3
+ 1548 0008 03EBC000 		add	r0, r3, r0, lsl #3
+ 1549              	.LVL106:
+ 1550              		.loc 1 551 10 view .LVU250
+ 1551 000c 044B     		ldr	r3, .L118+4
+ 1552 000e 0344     		add	r3, r3, r0
+ 1553 0010 5B00     		lsls	r3, r3, #1
+ 1554 0012 1868     		ldr	r0, [r3]
+ 552:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1555              		.loc 1 552 1 view .LVU251
+ 1556 0014 C0F30900 		ubfx	r0, r0, #0, #10
+ 1557 0018 7047     		bx	lr
+ 1558              	.L119:
+ 1559 001a 00BF     		.align	2
+ 1560              	.L118:
+ 1561 001c 00500040 		.word	1073762304
+ 1562 0020 02300020 		.word	536883202
+ 1563              		.cfi_endproc
+ 1564              	.LFE72:
+ 1566              		.section	.text.GetEPRxCount,"ax",%progbits
+ 1567              		.align	1
+ 1568              		.global	GetEPRxCount
+ 1569              		.syntax unified
+ 1570              		.thumb
+ 1571              		.thumb_func
+ 1573              	GetEPRxCount:
+ 1574              	.LVL107:
+ 1575              	.LFB73:
+ 553:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 554:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPRxCount
+ 555:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Get the Rx count.
+ 556:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 557:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 558:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Rx count value.
+ 559:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 560:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPRxCount(uint8_t bEpNum)
+ 561:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1576              		.loc 1 561 1 is_stmt 1 view -0
+ 1577              		.cfi_startproc
+ 1578              		@ args = 0, pretend = 0, frame = 0
+ 1579              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1580              		@ link register save eliminated.
+ 562:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPRxCount(bEpNum));
+ 1581              		.loc 1 562 3 view .LVU253
+ 1582              		.loc 1 562 10 is_stmt 0 view .LVU254
+ 1583 0000 064B     		ldr	r3, .L121
+ 1584 0002 D3F8503C 		ldr	r3, [r3, #3152]
+ 1585 0006 9BB2     		uxth	r3, r3
+ 1586 0008 03EBC000 		add	r0, r3, r0, lsl #3
+ 1587              	.LVL108:
+ 1588              		.loc 1 562 10 view .LVU255
+ 1589 000c 044B     		ldr	r3, .L121+4
+ 1590 000e 0344     		add	r3, r3, r0
+ 1591 0010 5B00     		lsls	r3, r3, #1
+ 1592 0012 1868     		ldr	r0, [r3]
+ 563:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1593              		.loc 1 563 1 view .LVU256
+ 1594 0014 C0F30900 		ubfx	r0, r0, #0, #10
+ 1595 0018 7047     		bx	lr
+ 1596              	.L122:
+ 1597 001a 00BF     		.align	2
+ 1598              	.L121:
+ 1599 001c 00500040 		.word	1073762304
+ 1600 0020 06300020 		.word	536883206
+ 1601              		.cfi_endproc
+ 1602              	.LFE73:
+ 1604              		.section	.text.SetEPDblBuffAddr,"ax",%progbits
+ 1605              		.align	1
+ 1606              		.global	SetEPDblBuffAddr
+ 1607              		.syntax unified
+ 1608              		.thumb
+ 1609              		.thumb_func
+ 1611              	SetEPDblBuffAddr:
+ 1612              	.LVL109:
+ 1613              	.LFB74:
+ 564:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 565:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPDblBuffAddr
+ 566:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the addresses of the buffer 0 and 1.
+ 567:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.  
+ 568:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wBuf0Addr: new address of buffer 0. 
+ 569:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wBuf1Addr: new address of buffer 1.
+ 570:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 571:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 572:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 573:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPDblBuffAddr(uint8_t bEpNum, uint16_t wBuf0Addr, uint16_t wBuf1Addr)
+ 574:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1614              		.loc 1 574 1 is_stmt 1 view -0
+ 1615              		.cfi_startproc
+ 1616              		@ args = 0, pretend = 0, frame = 0
+ 1617              		@ frame_needed = 0, uses_anonymous_args = 0
+ 575:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffAddr(bEpNum, wBuf0Addr, wBuf1Addr);
+ 1618              		.loc 1 575 3 view .LVU258
+ 574:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffAddr(bEpNum, wBuf0Addr, wBuf1Addr);
+ 1619              		.loc 1 574 1 is_stmt 0 view .LVU259
+ 1620 0000 10B5     		push	{r4, lr}
+ 1621              	.LCFI0:
+ 1622              		.cfi_def_cfa_offset 8
+ 1623              		.cfi_offset 4, -8
+ 1624              		.cfi_offset 14, -4
+ 1625              		.loc 1 575 3 view .LVU260
+ 1626 0002 0D4C     		ldr	r4, .L124
+ 1627 0004 4908     		lsrs	r1, r1, #1
+ 1628              	.LVL110:
+ 1629              		.loc 1 575 3 view .LVU261
+ 1630 0006 D4F8503C 		ldr	r3, [r4, #3152]
+ 1631 000a 4900     		lsls	r1, r1, #1
+ 1632 000c 9BB2     		uxth	r3, r3
+ 1633 000e 03EBC003 		add	r3, r3, r0, lsl #3
+ 1634 0012 03F10053 		add	r3, r3, #536870912
+ 1635 0016 03F54053 		add	r3, r3, #12288
+ 1636 001a 5B00     		lsls	r3, r3, #1
+ 1637 001c 1960     		str	r1, [r3]
+ 1638              		.loc 1 575 3 is_stmt 1 view .LVU262
+ 1639              		.loc 1 575 3 view .LVU263
+ 1640 001e D4F8503C 		ldr	r3, [r4, #3152]
+ 1641 0022 5208     		lsrs	r2, r2, #1
+ 1642              	.LVL111:
+ 1643              		.loc 1 575 3 is_stmt 0 view .LVU264
+ 1644 0024 9BB2     		uxth	r3, r3
+ 1645 0026 03EBC000 		add	r0, r3, r0, lsl #3
+ 1646              	.LVL112:
+ 1647              		.loc 1 575 3 view .LVU265
+ 1648 002a 044B     		ldr	r3, .L124+4
+ 1649 002c 5200     		lsls	r2, r2, #1
+ 1650 002e 0344     		add	r3, r3, r0
+ 1651 0030 5B00     		lsls	r3, r3, #1
+ 1652 0032 1A60     		str	r2, [r3]
+ 1653              		.loc 1 575 3 is_stmt 1 view .LVU266
+ 1654              		.loc 1 575 50 view .LVU267
+ 576:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1655              		.loc 1 576 1 is_stmt 0 view .LVU268
+ 1656 0034 10BD     		pop	{r4, pc}
+ 1657              	.L125:
+ 1658 0036 00BF     		.align	2
+ 1659              	.L124:
+ 1660 0038 00500040 		.word	1073762304
+ 1661 003c 04300020 		.word	536883204
+ 1662              		.cfi_endproc
+ 1663              	.LFE74:
+ 1665              		.section	.text.SetEPDblBuf0Addr,"ax",%progbits
+ 1666              		.align	1
+ 1667              		.global	SetEPDblBuf0Addr
+ 1668              		.syntax unified
+ 1669              		.thumb
+ 1670              		.thumb_func
+ 1672              	SetEPDblBuf0Addr:
+ 1673              	.LFB97:
+ 1674              		.cfi_startproc
+ 1675              		@ args = 0, pretend = 0, frame = 0
+ 1676              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1677              		@ link register save eliminated.
+ 1678 0000 FFF7FEBF 		b	SetEPTxAddr
+ 1679              		.cfi_endproc
+ 1680              	.LFE97:
+ 1682              		.section	.text.SetEPDblBuf1Addr,"ax",%progbits
+ 1683              		.align	1
+ 1684              		.global	SetEPDblBuf1Addr
+ 1685              		.syntax unified
+ 1686              		.thumb
+ 1687              		.thumb_func
+ 1689              	SetEPDblBuf1Addr:
+ 1690              	.LFB99:
+ 1691              		.cfi_startproc
+ 1692              		@ args = 0, pretend = 0, frame = 0
+ 1693              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1694              		@ link register save eliminated.
+ 1695 0000 FFF7FEBF 		b	SetEPRxAddr
+ 1696              		.cfi_endproc
+ 1697              	.LFE99:
+ 1699              		.section	.text.GetEPDblBuf0Addr,"ax",%progbits
+ 1700              		.align	1
+ 1701              		.global	GetEPDblBuf0Addr
+ 1702              		.syntax unified
+ 1703              		.thumb
+ 1704              		.thumb_func
+ 1706              	GetEPDblBuf0Addr:
+ 1707              	.LFB101:
+ 1708              		.cfi_startproc
+ 1709              		@ args = 0, pretend = 0, frame = 0
+ 1710              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1711              		@ link register save eliminated.
+ 1712 0000 FFF7FEBF 		b	GetEPTxAddr
+ 1713              		.cfi_endproc
+ 1714              	.LFE101:
+ 1716              		.section	.text.GetEPDblBuf1Addr,"ax",%progbits
+ 1717              		.align	1
+ 1718              		.global	GetEPDblBuf1Addr
+ 1719              		.syntax unified
+ 1720              		.thumb
+ 1721              		.thumb_func
+ 1723              	GetEPDblBuf1Addr:
+ 1724              	.LFB103:
+ 1725              		.cfi_startproc
+ 1726              		@ args = 0, pretend = 0, frame = 0
+ 1727              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1728              		@ link register save eliminated.
+ 1729 0000 FFF7FEBF 		b	GetEPRxAddr
+ 1730              		.cfi_endproc
+ 1731              	.LFE103:
+ 1733              		.section	.text.SetEPDblBuffCount,"ax",%progbits
+ 1734              		.align	1
+ 1735              		.global	SetEPDblBuffCount
+ 1736              		.syntax unified
+ 1737              		.thumb
+ 1738              		.thumb_func
+ 1740              	SetEPDblBuffCount:
+ 1741              	.LVL113:
+ 1742              	.LFB79:
+ 577:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 578:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPDblBuf0Addr
+ 579:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the Buffer 1 address.
+ 580:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number
+ 581:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wBuf0Addr: new address.
+ 582:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 583:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 584:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 585:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPDblBuf0Addr(uint8_t bEpNum, uint16_t wBuf0Addr)
+ 586:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 587:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuf0Addr(bEpNum, wBuf0Addr);
+ 588:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 589:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 590:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPDblBuf1Addr
+ 591:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the Buffer 1 address.
+ 592:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number
+ 593:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  wBuf1Addr: new address.
+ 594:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 595:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 596:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 597:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPDblBuf1Addr(uint8_t bEpNum, uint16_t wBuf1Addr)
+ 598:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 599:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuf1Addr(bEpNum, wBuf1Addr);
+ 600:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 601:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 602:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPDblBuf0Addr
+ 603:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the address of the Buffer 0.
+ 604:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.
+ 605:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 606:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 607:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 608:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPDblBuf0Addr(uint8_t bEpNum)
+ 609:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 610:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPDblBuf0Addr(bEpNum));
+ 611:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 612:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 613:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPDblBuf1Addr
+ 614:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the address of the Buffer 1.
+ 615:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.
+ 616:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 617:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Address of the Buffer 1.
+ 618:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 619:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPDblBuf1Addr(uint8_t bEpNum)
+ 620:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 621:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPDblBuf1Addr(bEpNum));
+ 622:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 623:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 624:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPDblBuffCount
+ 625:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the number of bytes for a double Buffer 
+ 626:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  endpoint.
+ 627:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum,bDir, wCount
+ 628:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 629:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 630:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 631:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPDblBuffCount(uint8_t bEpNum, uint8_t bDir, uint16_t wCount)
+ 632:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1743              		.loc 1 632 1 is_stmt 1 view -0
+ 1744              		.cfi_startproc
+ 1745              		@ args = 0, pretend = 0, frame = 0
+ 1746              		@ frame_needed = 0, uses_anonymous_args = 0
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1747              		.loc 1 633 3 view .LVU270
+ 1748 0000 0129     		cmp	r1, #1
+ 632:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1749              		.loc 1 632 1 is_stmt 0 view .LVU271
+ 1750 0002 10B5     		push	{r4, lr}
+ 1751              	.LCFI1:
+ 1752              		.cfi_def_cfa_offset 8
+ 1753              		.cfi_offset 4, -8
+ 1754              		.cfi_offset 14, -4
+ 1755              		.loc 1 633 3 view .LVU272
+ 1756 0004 2DD1     		bne	.L131
+ 1757              	.LBB19:
+ 1758              		.loc 1 633 3 is_stmt 1 discriminator 1 view .LVU273
+ 1759 0006 274B     		ldr	r3, .L150
+ 1760 0008 2749     		ldr	r1, .L150+4
+ 1761              	.LVL114:
+ 1762              		.loc 1 633 3 is_stmt 0 discriminator 1 view .LVU274
+ 1763 000a D3F8503C 		ldr	r3, [r3, #3152]
+ 1764 000e C400     		lsls	r4, r0, #3
+ 1765 0010 9BB2     		uxth	r3, r3
+ 1766 0012 03EBC000 		add	r0, r3, r0, lsl #3
+ 1767              	.LVL115:
+ 1768              		.loc 1 633 3 discriminator 1 view .LVU275
+ 1769 0016 0144     		add	r1, r1, r0
+ 1770              	.LBB20:
+ 1771 0018 3E2A     		cmp	r2, #62
+ 1772              	.LBE20:
+ 1773 001a 4FEA4101 		lsl	r1, r1, #1
+ 1774              	.LVL116:
+ 1775              	.LBB21:
+ 1776              		.loc 1 633 3 is_stmt 1 discriminator 1 view .LVU276
+ 1777              		.loc 1 633 3 discriminator 1 view .LVU277
+ 1778 001e 1AD9     		bls	.L132
+ 1779              		.loc 1 633 3 discriminator 3 view .LVU278
+ 1780 0020 5309     		lsrs	r3, r2, #5
+ 1781              	.LVL117:
+ 1782              		.loc 1 633 3 discriminator 3 view .LVU279
+ 1783 0022 D006     		lsls	r0, r2, #27
+ 1784              		.loc 1 633 3 discriminator 3 view .LVU280
+ 1785 0024 04BF     		itt	eq
+ 1786 0026 03F1FF33 		addeq	r3, r3, #-1
+ 1787              	.LVL118:
+ 1788              		.loc 1 633 3 is_stmt 0 discriminator 3 view .LVU281
+ 1789 002a 9BB2     		uxtheq	r3, r3
+ 1790              	.LVL119:
+ 1791              		.loc 1 633 3 is_stmt 1 discriminator 3 view .LVU282
+ 1792 002c 9B02     		lsls	r3, r3, #10
+ 1793              	.LVL120:
+ 1794              		.loc 1 633 3 is_stmt 0 discriminator 3 view .LVU283
+ 1795 002e 43F40043 		orr	r3, r3, #32768
+ 1796              	.LVL121:
+ 1797              	.L148:
+ 1798              		.loc 1 633 3 discriminator 11 view .LVU284
+ 1799 0032 0B60     		str	r3, [r1]
+ 1800              	.LBE21:
+ 1801              	.LBE19:
+ 1802              		.loc 1 633 3 is_stmt 1 discriminator 11 view .LVU285
+ 1803              		.loc 1 633 3 discriminator 11 view .LVU286
+ 1804              	.LBB23:
+ 1805              		.loc 1 633 3 discriminator 11 view .LVU287
+ 1806 0034 1B4B     		ldr	r3, .L150
+ 1807              	.LBB24:
+ 1808 0036 3E2A     		cmp	r2, #62
+ 1809              	.LBE24:
+ 1810 0038 D3F8501C 		ldr	r1, [r3, #3152]
+ 1811              	.LVL122:
+ 1812              		.loc 1 633 3 is_stmt 0 discriminator 11 view .LVU288
+ 1813 003c 1B4B     		ldr	r3, .L150+8
+ 1814 003e 89B2     		uxth	r1, r1
+ 1815 0040 2144     		add	r1, r1, r4
+ 1816 0042 0B44     		add	r3, r3, r1
+ 1817 0044 4FEA4301 		lsl	r1, r3, #1
+ 1818              	.LVL123:
+ 1819              	.LBB25:
+ 1820              		.loc 1 633 3 is_stmt 1 discriminator 11 view .LVU289
+ 1821              		.loc 1 633 3 discriminator 11 view .LVU290
+ 1822 0048 21D8     		bhi	.L139
+ 1823              		.loc 1 633 3 discriminator 19 view .LVU291
+ 1824 004a 5308     		lsrs	r3, r2, #1
+ 1825              	.LVL124:
+ 1826              		.loc 1 633 3 discriminator 19 view .LVU292
+ 1827 004c D207     		lsls	r2, r2, #31
+ 1828              	.LVL125:
+ 1829              		.loc 1 633 3 discriminator 19 view .LVU293
+ 1830 004e 48BF     		it	mi
+ 1831 0050 0133     		addmi	r3, r3, #1
+ 1832              	.LVL126:
+ 1833              		.loc 1 633 3 discriminator 19 view .LVU294
+ 1834 0052 9B02     		lsls	r3, r3, #10
+ 1835              	.LVL127:
+ 1836              		.loc 1 633 3 is_stmt 0 discriminator 19 view .LVU295
+ 1837 0054 24E0     		b	.L149
+ 1838              	.LVL128:
+ 1839              	.L132:
+ 1840              		.loc 1 633 3 discriminator 19 view .LVU296
+ 1841              	.LBE25:
+ 1842              	.LBE23:
+ 1843              	.LBB27:
+ 1844              	.LBB22:
+ 1845              		.loc 1 633 3 is_stmt 1 discriminator 4 view .LVU297
+ 1846 0056 5308     		lsrs	r3, r2, #1
+ 1847              	.LVL129:
+ 1848              		.loc 1 633 3 discriminator 4 view .LVU298
+ 1849 0058 D007     		lsls	r0, r2, #31
+ 1850              		.loc 1 633 3 discriminator 4 view .LVU299
+ 1851 005a 48BF     		it	mi
+ 1852 005c 0133     		addmi	r3, r3, #1
+ 1853              	.LVL130:
+ 1854              		.loc 1 633 3 discriminator 4 view .LVU300
+ 1855 005e 9B02     		lsls	r3, r3, #10
+ 1856              	.LVL131:
+ 1857              		.loc 1 633 3 is_stmt 0 discriminator 4 view .LVU301
+ 1858 0060 E7E7     		b	.L148
+ 1859              	.LVL132:
+ 1860              	.L131:
+ 1861              		.loc 1 633 3 discriminator 4 view .LVU302
+ 1862              	.LBE22:
+ 1863              	.LBE27:
+ 1864              		.loc 1 633 3 is_stmt 1 discriminator 2 view .LVU303
+ 1865 0062 0229     		cmp	r1, #2
+ 1866 0064 12D1     		bne	.L130
+ 1867              		.loc 1 633 3 discriminator 13 view .LVU304
+ 1868 0066 0F4C     		ldr	r4, .L150
+ 1869 0068 0F4B     		ldr	r3, .L150+4
+ 1870 006a D4F8501C 		ldr	r1, [r4, #3152]
+ 1871              	.LVL133:
+ 1872              		.loc 1 633 3 is_stmt 0 discriminator 13 view .LVU305
+ 1873 006e 89B2     		uxth	r1, r1
+ 1874 0070 01EBC001 		add	r1, r1, r0, lsl #3
+ 1875 0074 0B44     		add	r3, r3, r1
+ 1876 0076 5B00     		lsls	r3, r3, #1
+ 1877 0078 1A60     		str	r2, [r3]
+ 1878              		.loc 1 633 3 is_stmt 1 discriminator 13 view .LVU306
+ 1879              		.loc 1 633 3 discriminator 13 view .LVU307
+ 1880              		.loc 1 633 3 discriminator 13 view .LVU308
+ 1881              		.loc 1 633 3 discriminator 13 view .LVU309
+ 1882 007a D4F8503C 		ldr	r3, [r4, #3152]
+ 1883 007e 9BB2     		uxth	r3, r3
+ 1884 0080 03EBC000 		add	r0, r3, r0, lsl #3
+ 1885              	.LVL134:
+ 1886              		.loc 1 633 3 is_stmt 0 discriminator 13 view .LVU310
+ 1887 0084 094B     		ldr	r3, .L150+8
+ 1888 0086 0344     		add	r3, r3, r0
+ 1889 0088 5B00     		lsls	r3, r3, #1
+ 1890 008a 1A60     		str	r2, [r3]
+ 1891              	.LVL135:
+ 1892              	.L130:
+ 634:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 1893              		.loc 1 634 1 view .LVU311
+ 1894 008c 10BD     		pop	{r4, pc}
+ 1895              	.LVL136:
+ 1896              	.L139:
+ 1897              	.LBB28:
+ 1898              	.LBB26:
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1899              		.loc 1 633 3 is_stmt 1 discriminator 18 view .LVU312
+ 1900 008e 5309     		lsrs	r3, r2, #5
+ 1901              	.LVL137:
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1902              		.loc 1 633 3 discriminator 18 view .LVU313
+ 1903 0090 D006     		lsls	r0, r2, #27
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1904              		.loc 1 633 3 discriminator 18 view .LVU314
+ 1905 0092 04BF     		itt	eq
+ 1906 0094 03F1FF33 		addeq	r3, r3, #-1
+ 1907              	.LVL138:
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1908              		.loc 1 633 3 is_stmt 0 discriminator 18 view .LVU315
+ 1909 0098 9BB2     		uxtheq	r3, r3
+ 1910              	.LVL139:
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1911              		.loc 1 633 3 is_stmt 1 discriminator 18 view .LVU316
+ 1912 009a 9B02     		lsls	r3, r3, #10
+ 1913              	.LVL140:
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1914              		.loc 1 633 3 is_stmt 0 discriminator 18 view .LVU317
+ 1915 009c 43F40043 		orr	r3, r3, #32768
+ 1916              	.LVL141:
+ 1917              	.L149:
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1918              		.loc 1 633 3 discriminator 26 view .LVU318
+ 1919 00a0 0B60     		str	r3, [r1]
+ 1920              	.LBE26:
+ 1921              	.LBE28:
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1922              		.loc 1 633 3 is_stmt 1 discriminator 26 view .LVU319
+ 633:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuffCount(bEpNum, bDir, wCount);
+ 1923              		.loc 1 633 43 discriminator 26 view .LVU320
+ 1924              		.loc 1 634 1 is_stmt 0 discriminator 26 view .LVU321
+ 1925 00a2 F3E7     		b	.L130
+ 1926              	.L151:
+ 1927              		.align	2
+ 1928              	.L150:
+ 1929 00a4 00500040 		.word	1073762304
+ 1930 00a8 02300020 		.word	536883202
+ 1931 00ac 06300020 		.word	536883206
+ 1932              		.cfi_endproc
+ 1933              	.LFE79:
+ 1935              		.section	.text.SetEPDblBuf0Count,"ax",%progbits
+ 1936              		.align	1
+ 1937              		.global	SetEPDblBuf0Count
+ 1938              		.syntax unified
+ 1939              		.thumb
+ 1940              		.thumb_func
+ 1942              	SetEPDblBuf0Count:
+ 1943              	.LVL142:
+ 1944              	.LFB80:
+ 635:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 636:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPDblBuf0Count
+ 637:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the number of bytes in the buffer 0 of a double Buffer 
+ 638:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  endpoint.
+ 639:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum, bDir,  wCount
+ 640:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 641:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 642:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 643:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPDblBuf0Count(uint8_t bEpNum, uint8_t bDir, uint16_t wCount)
+ 644:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 1945              		.loc 1 644 1 is_stmt 1 view -0
+ 1946              		.cfi_startproc
+ 1947              		@ args = 0, pretend = 0, frame = 0
+ 1948              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1949              		@ link register save eliminated.
+ 645:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuf0Count(bEpNum, bDir, wCount);
+ 1950              		.loc 1 645 3 view .LVU323
+ 1951 0000 0129     		cmp	r1, #1
+ 1952 0002 1CD1     		bne	.L153
+ 1953              	.LBB29:
+ 1954              		.loc 1 645 3 discriminator 1 view .LVU324
+ 1955 0004 144B     		ldr	r3, .L162
+ 1956 0006 1549     		ldr	r1, .L162+4
+ 1957              	.LVL143:
+ 1958              		.loc 1 645 3 is_stmt 0 discriminator 1 view .LVU325
+ 1959 0008 D3F8503C 		ldr	r3, [r3, #3152]
+ 1960              	.LBB30:
+ 1961 000c 3E2A     		cmp	r2, #62
+ 1962              	.LBE30:
+ 1963 000e 9BB2     		uxth	r3, r3
+ 1964 0010 03EBC000 		add	r0, r3, r0, lsl #3
+ 1965              	.LVL144:
+ 1966              		.loc 1 645 3 discriminator 1 view .LVU326
+ 1967 0014 0144     		add	r1, r1, r0
+ 1968 0016 4FEA4101 		lsl	r1, r1, #1
+ 1969              	.LVL145:
+ 1970              	.LBB31:
+ 1971              		.loc 1 645 3 is_stmt 1 discriminator 1 view .LVU327
+ 1972              		.loc 1 645 3 discriminator 1 view .LVU328
+ 1973 001a 0AD9     		bls	.L154
+ 1974              		.loc 1 645 3 discriminator 3 view .LVU329
+ 1975 001c 5309     		lsrs	r3, r2, #5
+ 1976              	.LVL146:
+ 1977              		.loc 1 645 3 discriminator 3 view .LVU330
+ 1978 001e D006     		lsls	r0, r2, #27
+ 1979              		.loc 1 645 3 discriminator 3 view .LVU331
+ 1980 0020 04BF     		itt	eq
+ 1981 0022 03F1FF33 		addeq	r3, r3, #-1
+ 1982              	.LVL147:
+ 1983              		.loc 1 645 3 is_stmt 0 discriminator 3 view .LVU332
+ 1984 0026 9BB2     		uxtheq	r3, r3
+ 1985              	.LVL148:
+ 1986              		.loc 1 645 3 is_stmt 1 discriminator 3 view .LVU333
+ 1987 0028 9B02     		lsls	r3, r3, #10
+ 1988              	.LVL149:
+ 1989              		.loc 1 645 3 is_stmt 0 discriminator 3 view .LVU334
+ 1990 002a 43F40043 		orr	r3, r3, #32768
+ 1991              	.LVL150:
+ 1992              	.L161:
+ 1993              		.loc 1 645 3 discriminator 11 view .LVU335
+ 1994 002e 0B60     		str	r3, [r1]
+ 1995 0030 7047     		bx	lr
+ 1996              	.LVL151:
+ 1997              	.L154:
+ 1998              		.loc 1 645 3 is_stmt 1 discriminator 4 view .LVU336
+ 1999 0032 5308     		lsrs	r3, r2, #1
+ 2000              	.LVL152:
+ 2001              		.loc 1 645 3 discriminator 4 view .LVU337
+ 2002 0034 D207     		lsls	r2, r2, #31
+ 2003              	.LVL153:
+ 2004              		.loc 1 645 3 discriminator 4 view .LVU338
+ 2005 0036 48BF     		it	mi
+ 2006 0038 0133     		addmi	r3, r3, #1
+ 2007              	.LVL154:
+ 2008              		.loc 1 645 3 discriminator 4 view .LVU339
+ 2009 003a 9B02     		lsls	r3, r3, #10
+ 2010              	.LVL155:
+ 2011              		.loc 1 645 3 is_stmt 0 discriminator 4 view .LVU340
+ 2012 003c F7E7     		b	.L161
+ 2013              	.LVL156:
+ 2014              	.L153:
+ 2015              		.loc 1 645 3 discriminator 4 view .LVU341
+ 2016              	.LBE31:
+ 2017              	.LBE29:
+ 2018              		.loc 1 645 3 is_stmt 1 discriminator 2 view .LVU342
+ 2019 003e 0229     		cmp	r1, #2
+ 2020 0040 09D1     		bne	.L152
+ 2021              		.loc 1 645 3 discriminator 13 view .LVU343
+ 2022 0042 054B     		ldr	r3, .L162
+ 2023 0044 D3F8503C 		ldr	r3, [r3, #3152]
+ 2024 0048 9BB2     		uxth	r3, r3
+ 2025 004a 03EBC000 		add	r0, r3, r0, lsl #3
+ 2026              	.LVL157:
+ 2027              		.loc 1 645 3 is_stmt 0 discriminator 13 view .LVU344
+ 2028 004e 034B     		ldr	r3, .L162+4
+ 2029 0050 0344     		add	r3, r3, r0
+ 2030 0052 5B00     		lsls	r3, r3, #1
+ 2031 0054 1A60     		str	r2, [r3]
+ 2032              		.loc 1 645 43 is_stmt 1 discriminator 13 view .LVU345
+ 2033              	.L152:
+ 646:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 2034              		.loc 1 646 1 is_stmt 0 view .LVU346
+ 2035 0056 7047     		bx	lr
+ 2036              	.L163:
+ 2037              		.align	2
+ 2038              	.L162:
+ 2039 0058 00500040 		.word	1073762304
+ 2040 005c 02300020 		.word	536883202
+ 2041              		.cfi_endproc
+ 2042              	.LFE80:
+ 2044              		.section	.text.SetEPDblBuf1Count,"ax",%progbits
+ 2045              		.align	1
+ 2046              		.global	SetEPDblBuf1Count
+ 2047              		.syntax unified
+ 2048              		.thumb
+ 2049              		.thumb_func
+ 2051              	SetEPDblBuf1Count:
+ 2052              	.LVL158:
+ 2053              	.LFB81:
+ 647:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 648:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : SetEPDblBuf1Count
+ 649:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Set the number of bytes in the buffer 0 of a double Buffer 
+ 650:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  endpoint.
+ 651:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum,  bDir,  wCount
+ 652:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 653:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 654:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 655:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void SetEPDblBuf1Count(uint8_t bEpNum, uint8_t bDir, uint16_t wCount)
+ 656:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 2054              		.loc 1 656 1 is_stmt 1 view -0
+ 2055              		.cfi_startproc
+ 2056              		@ args = 0, pretend = 0, frame = 0
+ 2057              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2058              		@ link register save eliminated.
+ 657:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   _SetEPDblBuf1Count(bEpNum, bDir, wCount);
+ 2059              		.loc 1 657 3 view .LVU348
+ 2060 0000 0129     		cmp	r1, #1
+ 2061 0002 1CD1     		bne	.L165
+ 2062              	.LBB32:
+ 2063              		.loc 1 657 3 discriminator 1 view .LVU349
+ 2064 0004 144B     		ldr	r3, .L174
+ 2065 0006 1549     		ldr	r1, .L174+4
+ 2066              	.LVL159:
+ 2067              		.loc 1 657 3 is_stmt 0 discriminator 1 view .LVU350
+ 2068 0008 D3F8503C 		ldr	r3, [r3, #3152]
+ 2069              	.LBB33:
+ 2070 000c 3E2A     		cmp	r2, #62
+ 2071              	.LBE33:
+ 2072 000e 9BB2     		uxth	r3, r3
+ 2073 0010 03EBC000 		add	r0, r3, r0, lsl #3
+ 2074              	.LVL160:
+ 2075              		.loc 1 657 3 discriminator 1 view .LVU351
+ 2076 0014 0144     		add	r1, r1, r0
+ 2077 0016 4FEA4101 		lsl	r1, r1, #1
+ 2078              	.LVL161:
+ 2079              	.LBB34:
+ 2080              		.loc 1 657 3 is_stmt 1 discriminator 1 view .LVU352
+ 2081              		.loc 1 657 3 discriminator 1 view .LVU353
+ 2082 001a 0AD9     		bls	.L166
+ 2083              		.loc 1 657 3 discriminator 3 view .LVU354
+ 2084 001c 5309     		lsrs	r3, r2, #5
+ 2085              	.LVL162:
+ 2086              		.loc 1 657 3 discriminator 3 view .LVU355
+ 2087 001e D006     		lsls	r0, r2, #27
+ 2088              		.loc 1 657 3 discriminator 3 view .LVU356
+ 2089 0020 04BF     		itt	eq
+ 2090 0022 03F1FF33 		addeq	r3, r3, #-1
+ 2091              	.LVL163:
+ 2092              		.loc 1 657 3 is_stmt 0 discriminator 3 view .LVU357
+ 2093 0026 9BB2     		uxtheq	r3, r3
+ 2094              	.LVL164:
+ 2095              		.loc 1 657 3 is_stmt 1 discriminator 3 view .LVU358
+ 2096 0028 9B02     		lsls	r3, r3, #10
+ 2097              	.LVL165:
+ 2098              		.loc 1 657 3 is_stmt 0 discriminator 3 view .LVU359
+ 2099 002a 43F40043 		orr	r3, r3, #32768
+ 2100              	.LVL166:
+ 2101              	.L173:
+ 2102              		.loc 1 657 3 discriminator 11 view .LVU360
+ 2103 002e 0B60     		str	r3, [r1]
+ 2104 0030 7047     		bx	lr
+ 2105              	.LVL167:
+ 2106              	.L166:
+ 2107              		.loc 1 657 3 is_stmt 1 discriminator 4 view .LVU361
+ 2108 0032 5308     		lsrs	r3, r2, #1
+ 2109              	.LVL168:
+ 2110              		.loc 1 657 3 discriminator 4 view .LVU362
+ 2111 0034 D207     		lsls	r2, r2, #31
+ 2112              	.LVL169:
+ 2113              		.loc 1 657 3 discriminator 4 view .LVU363
+ 2114 0036 48BF     		it	mi
+ 2115 0038 0133     		addmi	r3, r3, #1
+ 2116              	.LVL170:
+ 2117              		.loc 1 657 3 discriminator 4 view .LVU364
+ 2118 003a 9B02     		lsls	r3, r3, #10
+ 2119              	.LVL171:
+ 2120              		.loc 1 657 3 is_stmt 0 discriminator 4 view .LVU365
+ 2121 003c F7E7     		b	.L173
+ 2122              	.LVL172:
+ 2123              	.L165:
+ 2124              		.loc 1 657 3 discriminator 4 view .LVU366
+ 2125              	.LBE34:
+ 2126              	.LBE32:
+ 2127              		.loc 1 657 3 is_stmt 1 discriminator 2 view .LVU367
+ 2128 003e 0229     		cmp	r1, #2
+ 2129 0040 09D1     		bne	.L164
+ 2130              		.loc 1 657 3 discriminator 13 view .LVU368
+ 2131 0042 054B     		ldr	r3, .L174
+ 2132 0044 D3F8503C 		ldr	r3, [r3, #3152]
+ 2133 0048 9BB2     		uxth	r3, r3
+ 2134 004a 03EBC000 		add	r0, r3, r0, lsl #3
+ 2135              	.LVL173:
+ 2136              		.loc 1 657 3 is_stmt 0 discriminator 13 view .LVU369
+ 2137 004e 034B     		ldr	r3, .L174+4
+ 2138 0050 0344     		add	r3, r3, r0
+ 2139 0052 5B00     		lsls	r3, r3, #1
+ 2140 0054 1A60     		str	r2, [r3]
+ 2141              		.loc 1 657 43 is_stmt 1 discriminator 13 view .LVU370
+ 2142              	.L164:
+ 658:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 2143              		.loc 1 658 1 is_stmt 0 view .LVU371
+ 2144 0056 7047     		bx	lr
+ 2145              	.L175:
+ 2146              		.align	2
+ 2147              	.L174:
+ 2148 0058 00500040 		.word	1073762304
+ 2149 005c 06300020 		.word	536883206
+ 2150              		.cfi_endproc
+ 2151              	.LFE81:
+ 2153              		.section	.text.GetEPDblBuf0Count,"ax",%progbits
+ 2154              		.align	1
+ 2155              		.global	GetEPDblBuf0Count
+ 2156              		.syntax unified
+ 2157              		.thumb
+ 2158              		.thumb_func
+ 2160              	GetEPDblBuf0Count:
+ 2161              	.LFB105:
+ 2162              		.cfi_startproc
+ 2163              		@ args = 0, pretend = 0, frame = 0
+ 2164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2165              		@ link register save eliminated.
+ 2166 0000 FFF7FEBF 		b	GetEPTxCount
+ 2167              		.cfi_endproc
+ 2168              	.LFE105:
+ 2170              		.section	.text.GetEPDblBuf1Count,"ax",%progbits
+ 2171              		.align	1
+ 2172              		.global	GetEPDblBuf1Count
+ 2173              		.syntax unified
+ 2174              		.thumb
+ 2175              		.thumb_func
+ 2177              	GetEPDblBuf1Count:
+ 2178              	.LFB107:
+ 2179              		.cfi_startproc
+ 2180              		@ args = 0, pretend = 0, frame = 0
+ 2181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2182              		@ link register save eliminated.
+ 2183 0000 FFF7FEBF 		b	GetEPRxCount
+ 2184              		.cfi_endproc
+ 2185              	.LFE107:
+ 2187              		.section	.text.GetEPDblBufDir,"ax",%progbits
+ 2188              		.align	1
+ 2189              		.global	GetEPDblBufDir
+ 2190              		.syntax unified
+ 2191              		.thumb
+ 2192              		.thumb_func
+ 2194              	GetEPDblBufDir:
+ 2195              	.LVL174:
+ 2196              	.LFB84:
+ 659:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 660:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPDblBuf0Count
+ 661:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the number of byte received in the buffer 0 of a double
+ 662:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  Buffer endpoint.
+ 663:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.
+ 664:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 665:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Endpoint Buffer 0 count
+ 666:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 667:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPDblBuf0Count(uint8_t bEpNum)
+ 668:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 669:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPDblBuf0Count(bEpNum));
+ 670:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 671:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 672:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPDblBuf1Count
+ 673:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Returns the number of data received in the buffer 1 of a double
+ 674:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  Buffer endpoint.
+ 675:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number.
+ 676:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 677:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : Endpoint Buffer 1 count.
+ 678:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 679:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t GetEPDblBuf1Count(uint8_t bEpNum)
+ 680:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 681:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(_GetEPDblBuf1Count(bEpNum));
+ 682:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 683:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 684:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : GetEPDblBufDir
+ 685:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : gets direction of the double buffered endpoint
+ 686:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum: Endpoint Number. 
+ 687:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 688:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : EP_DBUF_OUT, EP_DBUF_IN,
+ 689:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *                  EP_DBUF_ERR if the endpoint counter not yet programmed.
+ 690:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 691:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** EP_DBUF_DIR GetEPDblBufDir(uint8_t bEpNum)
+ 692:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 2197              		.loc 1 692 1 is_stmt 1 view -0
+ 2198              		.cfi_startproc
+ 2199              		@ args = 0, pretend = 0, frame = 0
+ 2200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2201              		@ link register save eliminated.
+ 693:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   if ((uint16_t)(*_pEPRxCount(bEpNum) & 0xFC00) != 0)
+ 2202              		.loc 1 693 3 view .LVU373
+ 2203              		.loc 1 693 19 is_stmt 0 view .LVU374
+ 2204 0000 0F49     		ldr	r1, .L182
+ 2205 0002 C200     		lsls	r2, r0, #3
+ 2206 0004 D1F8503C 		ldr	r3, [r1, #3152]
+ 2207 0008 9BB2     		uxth	r3, r3
+ 2208 000a 03EBC000 		add	r0, r3, r0, lsl #3
+ 2209              	.LVL175:
+ 2210              		.loc 1 693 19 view .LVU375
+ 2211 000e 0D4B     		ldr	r3, .L182+4
+ 2212 0010 0344     		add	r3, r3, r0
+ 2213              		.loc 1 693 18 view .LVU376
+ 2214 0012 5B00     		lsls	r3, r3, #1
+ 2215              		.loc 1 693 7 view .LVU377
+ 2216 0014 1B68     		ldr	r3, [r3]
+ 2217              		.loc 1 693 6 view .LVU378
+ 2218 0016 13F47C4F 		tst	r3, #64512
+ 2219 001a 0ED1     		bne	.L180
+ 694:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****     return(EP_DBUF_OUT);
+ 695:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   else if (((uint16_t)(*_pEPTxCount(bEpNum)) & 0x03FF) != 0)
+ 2220              		.loc 1 695 8 is_stmt 1 view .LVU379
+ 2221              		.loc 1 695 25 is_stmt 0 view .LVU380
+ 2222 001c D1F8503C 		ldr	r3, [r1, #3152]
+ 2223 0020 9BB2     		uxth	r3, r3
+ 2224 0022 1A44     		add	r2, r2, r3
+ 2225 0024 084B     		ldr	r3, .L182+8
+ 2226 0026 1344     		add	r3, r3, r2
+ 2227              		.loc 1 695 24 view .LVU381
+ 2228 0028 5B00     		lsls	r3, r3, #1
+ 2229              		.loc 1 695 46 view .LVU382
+ 2230 002a 1B68     		ldr	r3, [r3]
+ 2231 002c C3F30903 		ubfx	r3, r3, #0, #10
+ 696:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****     return(EP_DBUF_IN);
+ 697:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   else
+ 698:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****     return(EP_DBUF_ERR);
+ 2232              		.loc 1 698 11 view .LVU383
+ 2233 0030 002B     		cmp	r3, #0
+ 2234 0032 14BF     		ite	ne
+ 2235 0034 0220     		movne	r0, #2
+ 2236 0036 0020     		moveq	r0, #0
+ 2237 0038 7047     		bx	lr
+ 2238              	.L180:
+ 694:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****     return(EP_DBUF_OUT);
+ 2239              		.loc 1 694 11 view .LVU384
+ 2240 003a 0120     		movs	r0, #1
+ 699:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 2241              		.loc 1 699 1 view .LVU385
+ 2242 003c 7047     		bx	lr
+ 2243              	.L183:
+ 2244 003e 00BF     		.align	2
+ 2245              	.L182:
+ 2246 0040 00500040 		.word	1073762304
+ 2247 0044 06300020 		.word	536883206
+ 2248 0048 02300020 		.word	536883202
+ 2249              		.cfi_endproc
+ 2250              	.LFE84:
+ 2252              		.section	.text.FreeUserBuffer,"ax",%progbits
+ 2253              		.align	1
+ 2254              		.global	FreeUserBuffer
+ 2255              		.syntax unified
+ 2256              		.thumb
+ 2257              		.thumb_func
+ 2259              	FreeUserBuffer:
+ 2260              	.LVL176:
+ 2261              	.LFB85:
+ 700:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 701:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : FreeUserBuffer
+ 702:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : free buffer used from the application realizing it to the line
+ 703:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****                    toggles bit SW_BUF in the double buffered endpoint register
+ 704:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bEpNum, bDir
+ 705:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 706:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : None.
+ 707:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 708:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** void FreeUserBuffer(uint8_t bEpNum, uint8_t bDir)
+ 709:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 2262              		.loc 1 709 1 is_stmt 1 view -0
+ 2263              		.cfi_startproc
+ 2264              		@ args = 0, pretend = 0, frame = 0
+ 2265              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2266              		@ link register save eliminated.
+ 710:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   if (bDir == EP_DBUF_OUT)
+ 2267              		.loc 1 710 3 view .LVU387
+ 2268              		.loc 1 710 6 is_stmt 0 view .LVU388
+ 2269 0000 0129     		cmp	r1, #1
+ 2270 0002 0FD1     		bne	.L185
+ 711:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   { /* OUT double buffered endpoint */
+ 712:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****     _ToggleDTOG_TX(bEpNum);
+ 2271              		.loc 1 712 5 is_stmt 1 view .LVU389
+ 2272 0004 8000     		lsls	r0, r0, #2
+ 2273              	.LVL177:
+ 2274              		.loc 1 712 5 is_stmt 0 view .LVU390
+ 2275 0006 00F18040 		add	r0, r0, #1073741824
+ 2276 000a 00F5B840 		add	r0, r0, #23552
+ 2277 000e 0368     		ldr	r3, [r0]
+ 2278 0010 23F0F003 		bic	r3, r3, #240
+ 2279 0014 1B05     		lsls	r3, r3, #20
+ 2280 0016 1B0D     		lsrs	r3, r3, #20
+ 2281 0018 43F40043 		orr	r3, r3, #32768
+ 2282 001c 43F0C003 		orr	r3, r3, #192
+ 2283              	.L187:
+ 713:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   }
+ 714:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   else if (bDir == EP_DBUF_IN)
+ 715:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   { /* IN double buffered endpoint */
+ 716:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****     _ToggleDTOG_RX(bEpNum);
+ 2284              		.loc 1 716 5 view .LVU391
+ 2285 0020 0360     		str	r3, [r0]
+ 2286              	.L184:
+ 717:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   }
+ 718:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 2287              		.loc 1 718 1 view .LVU392
+ 2288 0022 7047     		bx	lr
+ 2289              	.LVL178:
+ 2290              	.L185:
+ 714:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   { /* IN double buffered endpoint */
+ 2291              		.loc 1 714 8 is_stmt 1 view .LVU393
+ 714:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   { /* IN double buffered endpoint */
+ 2292              		.loc 1 714 11 is_stmt 0 view .LVU394
+ 2293 0024 0229     		cmp	r1, #2
+ 2294 0026 FCD1     		bne	.L184
+ 716:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   }
+ 2295              		.loc 1 716 5 is_stmt 1 view .LVU395
+ 2296 0028 8000     		lsls	r0, r0, #2
+ 2297              	.LVL179:
+ 716:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   }
+ 2298              		.loc 1 716 5 is_stmt 0 view .LVU396
+ 2299 002a 00F18040 		add	r0, r0, #1073741824
+ 2300 002e 00F5B840 		add	r0, r0, #23552
+ 2301 0032 0368     		ldr	r3, [r0]
+ 2302 0034 23F0F003 		bic	r3, r3, #240
+ 2303 0038 1B05     		lsls	r3, r3, #20
+ 2304 003a 1B0D     		lsrs	r3, r3, #20
+ 2305 003c 43F44043 		orr	r3, r3, #49152
+ 2306 0040 43F08003 		orr	r3, r3, #128
+ 2307 0044 ECE7     		b	.L187
+ 2308              		.cfi_endproc
+ 2309              	.LFE85:
+ 2311              		.section	.text.ToWord,"ax",%progbits
+ 2312              		.align	1
+ 2313              		.global	ToWord
+ 2314              		.syntax unified
+ 2315              		.thumb
+ 2316              		.thumb_func
+ 2318              	ToWord:
+ 2319              	.LVL180:
+ 2320              	.LFB86:
+ 719:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** 
+ 720:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 721:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ToWord
+ 722:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : merge two byte in a word.
+ 723:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : bh: byte high, bl: bytes low.
+ 724:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 725:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : resulted word.
+ 726:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 727:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t ToWord(uint8_t bh, uint8_t bl)
+ 728:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 2321              		.loc 1 728 1 is_stmt 1 view -0
+ 2322              		.cfi_startproc
+ 2323              		@ args = 0, pretend = 0, frame = 0
+ 2324              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2325              		@ link register save eliminated.
+ 729:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   uint16_t wRet;
+ 2326              		.loc 1 729 3 view .LVU398
+ 730:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   wRet = (uint16_t)bl | ((uint16_t)bh << 8);
+ 2327              		.loc 1 730 3 view .LVU399
+ 731:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(wRet);
+ 2328              		.loc 1 731 3 view .LVU400
+ 732:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 2329              		.loc 1 732 1 is_stmt 0 view .LVU401
+ 2330 0000 41EA0020 		orr	r0, r1, r0, lsl #8
+ 2331              	.LVL181:
+ 2332              		.loc 1 732 1 view .LVU402
+ 2333 0004 7047     		bx	lr
+ 2334              		.cfi_endproc
+ 2335              	.LFE86:
+ 2337              		.section	.text.ByteSwap,"ax",%progbits
+ 2338              		.align	1
+ 2339              		.global	ByteSwap
+ 2340              		.syntax unified
+ 2341              		.thumb
+ 2342              		.thumb_func
+ 2344              	ByteSwap:
+ 2345              	.LVL182:
+ 2346              	.LFB87:
+ 733:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** /*******************************************************************************
+ 734:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Function Name  : ByteSwap
+ 735:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Description    : Swap two byte in a word.
+ 736:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Input          : wSwW: word to Swap.
+ 737:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Output         : None.
+ 738:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** * Return         : resulted word.
+ 739:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** *******************************************************************************/
+ 740:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** uint16_t ByteSwap(uint16_t wSwW)
+ 741:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** {
+ 2347              		.loc 1 741 1 is_stmt 1 view -0
+ 2348              		.cfi_startproc
+ 2349              		@ args = 0, pretend = 0, frame = 0
+ 2350              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2351              		@ link register save eliminated.
+ 742:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   uint8_t bTemp;
+ 2352              		.loc 1 742 3 view .LVU404
+ 743:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   uint16_t wRet;
+ 2353              		.loc 1 743 3 view .LVU405
+ 744:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   bTemp = (uint8_t)(wSwW & 0xff);
+ 2354              		.loc 1 744 3 view .LVU406
+ 745:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   wRet =  (wSwW >> 8) | ((uint16_t)bTemp << 8);
+ 2355              		.loc 1 745 3 view .LVU407
+ 746:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c ****   return(wRet);
+ 2356              		.loc 1 746 3 view .LVU408
+ 2357              		.loc 1 746 9 is_stmt 0 view .LVU409
+ 2358 0000 40BA     		rev16	r0, r0
+ 2359              	.LVL183:
+ 747:./Libraries/STM32_USB-FS-Device_Driver/src/usb_regs.c **** }
+ 2360              		.loc 1 747 1 view .LVU410
+ 2361 0002 80B2     		uxth	r0, r0
+ 2362 0004 7047     		bx	lr
+ 2363              		.cfi_endproc
+ 2364              	.LFE87:
+ 2366              		.text
+ 2367              	.Letext0:
+ 2368              		.file 2 "c:\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\machine\\_default_typ
+ 2369              		.file 3 "c:\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 2370              		.file 4 "./Libraries/STM32_USB-FS-Device_Driver/inc/usb_regs.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 usb_regs.c
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:18     .text.SetCNTR:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:24     .text.SetCNTR:00000000 SetCNTR
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:41     .text.SetCNTR:00000008 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:46     .text.GetCNTR:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:52     .text.GetCNTR:00000000 GetCNTR
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:69     .text.GetCNTR:0000000c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:74     .text.SetISTR:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:80     .text.SetISTR:00000000 SetISTR
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:96     .text.SetISTR:00000008 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:101    .text.GetISTR:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:107    .text.GetISTR:00000000 GetISTR
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:124    .text.GetISTR:0000000c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:129    .text.GetFNR:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:135    .text.GetFNR:00000000 GetFNR
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:152    .text.GetFNR:0000000c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:157    .text.SetDADDR:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:163    .text.SetDADDR:00000000 SetDADDR
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:179    .text.SetDADDR:00000008 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:184    .text.GetDADDR:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:190    .text.GetDADDR:00000000 GetDADDR
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:207    .text.GetDADDR:0000000c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:212    .text.SetBTABLE:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:218    .text.SetBTABLE:00000000 SetBTABLE
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:238    .text.SetBTABLE:00000010 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:243    .text.GetBTABLE:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:249    .text.GetBTABLE:00000000 GetBTABLE
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:266    .text.GetBTABLE:0000000c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:271    .text.SetENDPOINT:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:277    .text.SetENDPOINT:00000000 SetENDPOINT
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:298    .text.GetENDPOINT:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:304    .text.GetENDPOINT:00000000 GetENDPOINT
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:327    .text.SetEPType:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:333    .text.SetEPType:00000000 SetEPType
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:359    .text.GetEPType:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:365    .text.GetEPType:00000000 GetEPType
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:388    .text.SetEPTxStatus:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:394    .text.SetEPTxStatus:00000000 SetEPTxStatus
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:441    .text.SetEPRxStatus:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:447    .text.SetEPRxStatus:00000000 SetEPRxStatus
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:494    .text.SetDouBleBuffEPStall:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:500    .text.SetDouBleBuffEPStall:00000000 SetDouBleBuffEPStall
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:562    .text.GetEPTxStatus:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:568    .text.GetEPTxStatus:00000000 GetEPTxStatus
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:591    .text.GetEPRxStatus:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:597    .text.GetEPRxStatus:00000000 GetEPRxStatus
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:620    .text.SetEPTxValid:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:626    .text.SetEPTxValid:00000000 SetEPTxValid
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:668    .text.SetEPRxValid:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:674    .text.SetEPRxValid:00000000 SetEPRxValid
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:716    .text.SetEP_KIND:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:722    .text.SetEP_KIND:00000000 SetEP_KIND
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:748    .text.ClearEP_KIND:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:754    .text.ClearEP_KIND:00000000 ClearEP_KIND
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:781    .text.Clear_Status_Out:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:787    .text.Clear_Status_Out:00000000 Clear_Status_Out
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:798    .text.Set_Status_Out:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:804    .text.Set_Status_Out:00000000 Set_Status_Out
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:815    .text.SetEPDoubleBuff:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:821    .text.SetEPDoubleBuff:00000000 SetEPDoubleBuff
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:832    .text.ClearEPDoubleBuff:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:838    .text.ClearEPDoubleBuff:00000000 ClearEPDoubleBuff
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:849    .text.GetTxStallStatus:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:855    .text.GetTxStallStatus:00000000 GetTxStallStatus
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:881    .text.GetRxStallStatus:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:887    .text.GetRxStallStatus:00000000 GetRxStallStatus
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:913    .text.ClearEP_CTR_RX:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:919    .text.ClearEP_CTR_RX:00000000 ClearEP_CTR_RX
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:944    .text.ClearEP_CTR_TX:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:950    .text.ClearEP_CTR_TX:00000000 ClearEP_CTR_TX
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:976    .text.ToggleDTOG_RX:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:982    .text.ToggleDTOG_RX:00000000 ToggleDTOG_RX
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1009   .text.ToggleDTOG_TX:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1015   .text.ToggleDTOG_TX:00000000 ToggleDTOG_TX
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1042   .text.ClearDTOG_RX:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1048   .text.ClearDTOG_RX:00000000 ClearDTOG_RX
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1080   .text.ClearDTOG_TX:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1086   .text.ClearDTOG_TX:00000000 ClearDTOG_TX
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1118   .text.SetEPAddress:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1124   .text.SetEPAddress:00000000 SetEPAddress
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1154   .text.GetEPAddress:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1160   .text.GetEPAddress:00000000 GetEPAddress
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1183   .text.SetEPTxAddr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1189   .text.SetEPTxAddr:00000000 SetEPTxAddr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1217   .text.SetEPTxAddr:00000020 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1222   .text.SetEPRxAddr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1228   .text.SetEPRxAddr:00000000 SetEPRxAddr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1256   .text.SetEPRxAddr:0000001c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1262   .text.GetEPTxAddr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1268   .text.GetEPTxAddr:00000000 GetEPTxAddr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1293   .text.GetEPTxAddr:0000001c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1298   .text.GetEPRxAddr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1304   .text.GetEPRxAddr:00000000 GetEPRxAddr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1329   .text.GetEPRxAddr:00000018 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1335   .text.SetEPTxCount:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1341   .text.SetEPTxCount:00000000 SetEPTxCount
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1365   .text.SetEPTxCount:00000018 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1371   .text.SetEPCountRxReg:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1377   .text.SetEPCountRxReg:00000000 SetEPCountRxReg
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1438   .text.SetEPRxCount:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1444   .text.SetEPRxCount:00000000 SetEPRxCount
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1521   .text.SetEPRxCount:0000003c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1529   .text.GetEPTxCount:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1535   .text.GetEPTxCount:00000000 GetEPTxCount
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1561   .text.GetEPTxCount:0000001c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1567   .text.GetEPRxCount:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1573   .text.GetEPRxCount:00000000 GetEPRxCount
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1599   .text.GetEPRxCount:0000001c $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1605   .text.SetEPDblBuffAddr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1611   .text.SetEPDblBuffAddr:00000000 SetEPDblBuffAddr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1660   .text.SetEPDblBuffAddr:00000038 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1666   .text.SetEPDblBuf0Addr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1672   .text.SetEPDblBuf0Addr:00000000 SetEPDblBuf0Addr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1683   .text.SetEPDblBuf1Addr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1689   .text.SetEPDblBuf1Addr:00000000 SetEPDblBuf1Addr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1700   .text.GetEPDblBuf0Addr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1706   .text.GetEPDblBuf0Addr:00000000 GetEPDblBuf0Addr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1717   .text.GetEPDblBuf1Addr:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1723   .text.GetEPDblBuf1Addr:00000000 GetEPDblBuf1Addr
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1734   .text.SetEPDblBuffCount:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1740   .text.SetEPDblBuffCount:00000000 SetEPDblBuffCount
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1929   .text.SetEPDblBuffCount:000000a4 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1936   .text.SetEPDblBuf0Count:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:1942   .text.SetEPDblBuf0Count:00000000 SetEPDblBuf0Count
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2039   .text.SetEPDblBuf0Count:00000058 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2045   .text.SetEPDblBuf1Count:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2051   .text.SetEPDblBuf1Count:00000000 SetEPDblBuf1Count
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2148   .text.SetEPDblBuf1Count:00000058 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2154   .text.GetEPDblBuf0Count:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2160   .text.GetEPDblBuf0Count:00000000 GetEPDblBuf0Count
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2171   .text.GetEPDblBuf1Count:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2177   .text.GetEPDblBuf1Count:00000000 GetEPDblBuf1Count
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2188   .text.GetEPDblBufDir:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2194   .text.GetEPDblBufDir:00000000 GetEPDblBufDir
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2246   .text.GetEPDblBufDir:00000040 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2253   .text.FreeUserBuffer:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2259   .text.FreeUserBuffer:00000000 FreeUserBuffer
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2312   .text.ToWord:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2318   .text.ToWord:00000000 ToWord
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2338   .text.ByteSwap:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccuO0hKz.s:2344   .text.ByteSwap:00000000 ByteSwap
+
+NO UNDEFINED SYMBOLS

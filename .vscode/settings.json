@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "hw_config.h": "c",
+        "misc.h": "c",
+        "stm32f10x_tim.h": "c",
+        "sys_tick.h": "c"
+    }
+}

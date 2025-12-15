@@ -1,0 +1,317 @@
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"usb_sil.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.USB_SIL_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	USB_SIL_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	USB_SIL_Init:
+  25              	.LFB29:
+  26              		.file 1 "./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c"
+   1:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
+   2:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * File Name          : usb_sil.c
+   3:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Author             : MCD Application Team
+   4:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Version            : V3.3.0
+   5:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Date               : 21-March-2011
+   6:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Description        : Simplified Interface Layer for Global Initialization and 
+   7:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *                      Endpoint Rea/Write operations.
+   8:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** ********************************************************************************
+   9:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+  10:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+  11:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+  12:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+  13:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+  14:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  15:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *******************************************************************************/
+  16:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  17:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /* Includes ------------------------------------------------------------------*/
+  18:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #include "usb_lib.h"
+  19:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  20:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /* Private typedef -----------------------------------------------------------*/
+  21:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /* Private define ------------------------------------------------------------*/
+  22:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /* Private macro -------------------------------------------------------------*/
+  23:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /* Private variables ---------------------------------------------------------*/
+  24:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /* Extern variables ----------------------------------------------------------*/
+  25:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /* Private function prototypes -----------------------------------------------*/
+  26:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /* Private functions ---------------------------------------------------------*/
+  27:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  28:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /*******************************************************************************
+  29:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Function Name  : USB_SIL_Init
+  30:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Description    : Initialize the USB Device IP and the Endpoint 0.
+  31:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Input          : None.
+  32:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Output         : None.
+  33:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Return         : Status.
+  34:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *******************************************************************************/
+  35:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** uint32_t USB_SIL_Init(void)
+  36:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** {
+  27              		.loc 1 36 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  37:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #ifndef STM32F10X_CL
+  38:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+  39:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* USB interrupts initialization */
+  40:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* clear pending interrupts */
+  41:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   _SetISTR(0);
+  32              		.loc 1 41 3 view .LVU1
+  42:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   wInterrupt_Mask = IMR_MSK;
+  33              		.loc 1 42 19 is_stmt 0 view .LVU2
+  34 0000 4FF40642 		mov	r2, #34304
+  41:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   wInterrupt_Mask = IMR_MSK;
+  35              		.loc 1 41 3 view .LVU3
+  36 0004 0020     		movs	r0, #0
+  37 0006 044B     		ldr	r3, .L2
+  38              		.loc 1 42 19 view .LVU4
+  39 0008 0449     		ldr	r1, .L2+4
+  41:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   wInterrupt_Mask = IMR_MSK;
+  40              		.loc 1 41 3 view .LVU5
+  41 000a C3F8440C 		str	r0, [r3, #3140]
+  42              		.loc 1 42 3 is_stmt 1 view .LVU6
+  43              		.loc 1 42 19 is_stmt 0 view .LVU7
+  44 000e 0A80     		strh	r2, [r1]	@ movhi
+  43:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* set interrupts mask */
+  44:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   _SetCNTR(wInterrupt_Mask);
+  45              		.loc 1 44 3 is_stmt 1 view .LVU8
+  46 0010 C3F8402C 		str	r2, [r3, #3136]
+  45:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+  46:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #else
+  47:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+  48:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Perform OTG Device initialization procedure (including EP0 init) */
+  49:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   OTG_DEV_Init();
+  50:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+  51:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #endif /* STM32F10X_CL */
+  52:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  53:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   return 0;
+  47              		.loc 1 53 3 view .LVU9
+  54:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** }
+  48              		.loc 1 54 1 is_stmt 0 view .LVU10
+  49 0014 7047     		bx	lr
+  50              	.L3:
+  51 0016 00BF     		.align	2
+  52              	.L2:
+  53 0018 00500040 		.word	1073762304
+  54 001c 00000000 		.word	wInterrupt_Mask
+  55              		.cfi_endproc
+  56              	.LFE29:
+  58              		.section	.text.USB_SIL_Write,"ax",%progbits
+  59              		.align	1
+  60              		.global	USB_SIL_Write
+  61              		.syntax unified
+  62              		.thumb
+  63              		.thumb_func
+  65              	USB_SIL_Write:
+  66              	.LVL0:
+  67              	.LFB30:
+  55:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  56:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /*******************************************************************************
+  57:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Function Name  : USB_SIL_Write
+  58:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Description    : Write a buffer of data to a selected endpoint.
+  59:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Input          : - bEpAddr: The address of the non control endpoint.
+  60:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *                  - pBufferPointer: The pointer to the buffer of data to be written
+  61:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *                    to the endpoint.
+  62:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *                  - wBufferSize: Number of data to be written (in bytes).
+  63:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Output         : None.
+  64:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Return         : Status.
+  65:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *******************************************************************************/
+  66:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** uint32_t USB_SIL_Write(uint8_t bEpAddr, uint8_t* pBufferPointer, uint32_t wBufferSize)
+  67:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** {
+  68              		.loc 1 67 1 is_stmt 1 view -0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  68:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #ifndef STM32F10X_CL
+  69:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  70:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Use the memory interface function to write to the selected endpoint */
+  71:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   UserToPMABufferCopy(pBufferPointer, GetEPTxAddr(bEpAddr & 0x7F), wBufferSize);
+  72              		.loc 1 71 3 view .LVU12
+  67:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #ifndef STM32F10X_CL
+  73              		.loc 1 67 1 is_stmt 0 view .LVU13
+  74 0000 70B5     		push	{r4, r5, r6, lr}
+  75              	.LCFI0:
+  76              		.cfi_def_cfa_offset 16
+  77              		.cfi_offset 4, -16
+  78              		.cfi_offset 5, -12
+  79              		.cfi_offset 6, -8
+  80              		.cfi_offset 14, -4
+  81              		.loc 1 71 3 view .LVU14
+  82 0002 00F07F05 		and	r5, r0, #127
+  67:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #ifndef STM32F10X_CL
+  83              		.loc 1 67 1 view .LVU15
+  84 0006 1446     		mov	r4, r2
+  85              		.loc 1 71 3 view .LVU16
+  86 0008 2846     		mov	r0, r5
+  87              	.LVL1:
+  67:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #ifndef STM32F10X_CL
+  88              		.loc 1 67 1 view .LVU17
+  89 000a 0E46     		mov	r6, r1
+  90              		.loc 1 71 3 view .LVU18
+  91 000c FFF7FEFF 		bl	GetEPTxAddr
+  92              	.LVL2:
+  93              		.loc 1 71 3 view .LVU19
+  94 0010 A4B2     		uxth	r4, r4
+  95              	.LVL3:
+  96              		.loc 1 71 3 view .LVU20
+  97 0012 0146     		mov	r1, r0
+  98 0014 2246     		mov	r2, r4
+  99 0016 3046     		mov	r0, r6
+ 100 0018 FFF7FEFF 		bl	UserToPMABufferCopy
+ 101              	.LVL4:
+  72:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  73:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Update the data length in the control register */
+  74:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   SetEPTxCount((bEpAddr & 0x7F), wBufferSize);
+ 102              		.loc 1 74 3 is_stmt 1 view .LVU21
+ 103 001c 2846     		mov	r0, r5
+ 104 001e 2146     		mov	r1, r4
+ 105 0020 FFF7FEFF 		bl	SetEPTxCount
+ 106              	.LVL5:
+  75:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+  76:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #else
+  77:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+  78:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****    /* Use the PCD interface layer function to write to the selected endpoint */
+  79:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****    PCD_EP_Write (bEpAddr, pBufferPointer, wBufferSize); 
+  80:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****    
+  81:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #endif /* STM32F10X_CL */
+  82:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  83:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   return 0;
+ 107              		.loc 1 83 3 view .LVU22
+  84:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** }
+ 108              		.loc 1 84 1 is_stmt 0 view .LVU23
+ 109 0024 0020     		movs	r0, #0
+ 110 0026 70BD     		pop	{r4, r5, r6, pc}
+ 111              		.loc 1 84 1 view .LVU24
+ 112              		.cfi_endproc
+ 113              	.LFE30:
+ 115              		.section	.text.USB_SIL_Read,"ax",%progbits
+ 116              		.align	1
+ 117              		.global	USB_SIL_Read
+ 118              		.syntax unified
+ 119              		.thumb
+ 120              		.thumb_func
+ 122              	USB_SIL_Read:
+ 123              	.LVL6:
+ 124              	.LFB31:
+  85:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  86:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** /*******************************************************************************
+  87:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Function Name  : USB_SIL_Read
+  88:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Description    : Write a buffer of data to a selected endpoint.
+  89:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Input          : - bEpAddr: The address of the non control endpoint.
+  90:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *                  - pBufferPointer: The pointer to which will be saved the 
+  91:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *                     received data buffer.
+  92:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Output         : None.
+  93:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** * Return         : Number of received data (in Bytes).
+  94:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** *******************************************************************************/
+  95:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** uint32_t USB_SIL_Read(uint8_t bEpAddr, uint8_t* pBufferPointer)
+  96:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** {
+ 125              		.loc 1 96 1 is_stmt 1 view -0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+  97:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   uint32_t DataLength = 0;
+ 129              		.loc 1 97 3 view .LVU26
+  98:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+  99:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #ifndef STM32F10X_CL
+ 100:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+ 101:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Get the number of received data on the selected Endpoint */
+ 102:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   DataLength = GetEPRxCount(bEpAddr & 0x7F);
+ 130              		.loc 1 102 3 view .LVU27
+  96:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   uint32_t DataLength = 0;
+ 131              		.loc 1 96 1 is_stmt 0 view .LVU28
+ 132 0000 70B5     		push	{r4, r5, r6, lr}
+ 133              	.LCFI1:
+ 134              		.cfi_def_cfa_offset 16
+ 135              		.cfi_offset 4, -16
+ 136              		.cfi_offset 5, -12
+ 137              		.cfi_offset 6, -8
+ 138              		.cfi_offset 14, -4
+ 139              		.loc 1 102 16 view .LVU29
+ 140 0002 00F07F05 		and	r5, r0, #127
+ 141 0006 2846     		mov	r0, r5
+ 142              	.LVL7:
+  96:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   uint32_t DataLength = 0;
+ 143              		.loc 1 96 1 view .LVU30
+ 144 0008 0E46     		mov	r6, r1
+ 145              		.loc 1 102 16 view .LVU31
+ 146 000a FFF7FEFF 		bl	GetEPRxCount
+ 147              	.LVL8:
+ 148              		.loc 1 102 16 view .LVU32
+ 149 000e 0446     		mov	r4, r0
+ 150              	.LVL9:
+ 103:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+ 104:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Use the memory interface function to write to the selected endpoint */
+ 105:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   PMAToUserBufferCopy(pBufferPointer, GetEPRxAddr(bEpAddr & 0x7F), DataLength);
+ 151              		.loc 1 105 3 is_stmt 1 view .LVU33
+ 152 0010 2846     		mov	r0, r5
+ 153 0012 FFF7FEFF 		bl	GetEPRxAddr
+ 154              	.LVL10:
+ 155 0016 2246     		mov	r2, r4
+ 156 0018 0146     		mov	r1, r0
+ 157 001a 3046     		mov	r0, r6
+ 158 001c FFF7FEFF 		bl	PMAToUserBufferCopy
+ 159              	.LVL11:
+ 106:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+ 107:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #else
+ 108:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+ 109:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   USB_OTG_EP *ep;
+ 110:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+ 111:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Get the structure pointer of the selected Endpoint */
+ 112:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   ep = PCD_GetOutEP(bEpAddr);
+ 113:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+ 114:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Get the number of received data */
+ 115:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   DataLength = ep->xfer_len;
+ 116:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+ 117:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Use the PCD interface layer function to read the selected endpoint */
+ 118:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   PCD_EP_Read (bEpAddr, pBufferPointer, DataLength);
+ 119:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   
+ 120:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** #endif /* STM32F10X_CL */
+ 121:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** 
+ 122:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   /* Return the number of received data */
+ 123:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c ****   return DataLength;
+ 160              		.loc 1 123 3 view .LVU34
+ 124:./Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c **** }
+ 161              		.loc 1 124 1 is_stmt 0 view .LVU35
+ 162 0020 2046     		mov	r0, r4
+ 163 0022 70BD     		pop	{r4, r5, r6, pc}
+ 164              		.loc 1 124 1 view .LVU36
+ 165              		.cfi_endproc
+ 166              	.LFE31:
+ 168              		.text
+ 169              	.Letext0:
+ 170              		.file 2 "c:\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\machine\\_default_typ
+ 171              		.file 3 "c:\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 172              		.file 4 "./Libraries/STM32_USB-FS-Device_Driver/inc/usb_init.h"
+ 173              		.file 5 "./Libraries/STM32_USB-FS-Device_Driver/inc/usb_regs.h"
+ 174              		.file 6 "./Libraries/STM32_USB-FS-Device_Driver/inc/usb_mem.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 usb_sil.c
+C:\Users\YARIKS~1\AppData\Local\Temp\ccvsNtOb.s:18     .text.USB_SIL_Init:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccvsNtOb.s:24     .text.USB_SIL_Init:00000000 USB_SIL_Init
+C:\Users\YARIKS~1\AppData\Local\Temp\ccvsNtOb.s:53     .text.USB_SIL_Init:00000018 $d
+C:\Users\YARIKS~1\AppData\Local\Temp\ccvsNtOb.s:59     .text.USB_SIL_Write:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccvsNtOb.s:65     .text.USB_SIL_Write:00000000 USB_SIL_Write
+C:\Users\YARIKS~1\AppData\Local\Temp\ccvsNtOb.s:116    .text.USB_SIL_Read:00000000 $t
+C:\Users\YARIKS~1\AppData\Local\Temp\ccvsNtOb.s:122    .text.USB_SIL_Read:00000000 USB_SIL_Read
+
+UNDEFINED SYMBOLS
+wInterrupt_Mask
+GetEPTxAddr
+UserToPMABufferCopy
+SetEPTxCount
+GetEPRxCount
+GetEPRxAddr
+PMAToUserBufferCopy

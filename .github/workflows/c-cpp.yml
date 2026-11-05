@@ -12,5 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: make
-      run: make
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Install ARM GCC
+    run: |
+      sudo apt-get update
+      sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi
+
+  - name: Build
+    run: make

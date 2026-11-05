@@ -1,24 +1,26 @@
-name: C/C++ CI
+name: ARM GCC CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Install ARM GCC
-    run: |
-      sudo apt-get update
-      sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi
+      - name: Install ARM GCC
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi
 
-  - name: Build
-    run: make
+      - name: Check compiler
+        run: arm-none-eabi-gcc --version
+
+      - name: Build
+        run: make
